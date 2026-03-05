@@ -1,3 +1,11 @@
+// تفعيل مكتبة AOS للحركات
+AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100,
+    easing: 'ease-in-out'
+});
+
 // بيانات المشاريع للعرض في المودال
 const projectsData = {
     1: {
@@ -51,16 +59,18 @@ const projectsData = {
         tech: ["Java", "Algorithms", "Security", "Game Logic", "Binary Search"]
     },
     5: {
-        title: "🐾 Animal Association",
-        fullDescription: "تطبيق تعليمي تفاعلي للأطفال لتعلم أصوات الحيوانات.",
+        title: "🐾 Animal Association - نظام إدارة جمعية حيون",
+        fullDescription: "نظام متكامل لإدارة جمعية حيون لرعاية وتبني الحيوانات، تم تطويره باستخدام Laravel لتسهيل عمليات التبني، الرعاية البيطرية، وإدارة التبرعات.",
         details: [
-            "ربط الصور بالأصوات لتعزيز التعلم",
-            "واجهة مستخدم بسيطة ومناسبة للأطفال",
-            "مكتبة متكاملة من أصوات الحيوانات",
-            "اختيارات متعددة لاختبار المعرفة",
-            "تطبيق مفاهيم الـ OOP في التصميم"
+            "إدارة الحيوانات: تسجيل الحيوانات المتاحة للتبني مع صور وتفاصيل طبية",
+            "نظام طلبات التبني: استقبال وإدارة طلبات الراغبين في التبني مع الموافقات",
+            "إدارة الأقسام: تنظيم الأقسام الداخلية للجمعية (مبيت، عيادة، مطبخ)",
+            "نظام التبرعات: استقبال التبرعات المالية والعينية وتتبعها",
+            "تقارير وإحصائيات: لوحة تحكم تعرض إحصائيات التبني والرعاية",
+            "إدارة الموظفين: صلاحيات مختلفة للمشرفين والأطباء والمتطوعين",
+            "نظام تذكير: مواعيد التطعيمات والزيارات الدورية للحيوانات"
         ],
-        tech: ["Java", "Multimedia", "GUI", "OOP", "Education"]
+        tech: ["Laravel", "MySQL", "PHP", "Bootstrap", "AdminLTE", "Eloquent ORM", "MVC", "Authentication", "Authorization"]
     },
     6: {
         title: "🔧 Commang",
@@ -75,6 +85,46 @@ const projectsData = {
         tech: ["Java", "CLI", "Automation", "File Management", "Git Integration"]
     }
 };
+
+// بيانات الترجمة
+const translations = {
+    ar: {
+        name: "يامن",
+        title: "مهندس برمجيات | متخصص في Laravel و Java",
+        email: "your.email@example.com",
+        linkedin: "LinkedIn",
+        skillsTitle: "المهارات التقنية",
+        projectsTitle: "المشاريع البرمجية",
+        footerText: "© 2026 يامن - جميع الحقوق محفوظة",
+        detailsBtn: "عرض التفاصيل",
+        statProjects: "مشاريع كاملة",
+        statYears: "سنوات تعلم",
+        statPassion: "شغف بالتعلم",
+        statCoffee: "فنجان قهوة",
+        aboutTitle: "👋 من أنا",
+        aboutDesc1: "طالب في كلية الهندسة المعلوماتية - السنة الخامسة (برمجيات). متخصص في تطوير تطبيقات الويب باستخدام Laravel وأحب تحويل الأفكار إلى حلول برمجية عملية.",
+        aboutDesc2: "ما يميزني هو شغفي بالتعلم المستمر، دائماً أبحث عن التقنيات الجديدة وأحب حل المشكلات المعقدة بطريقة إبداعية. أؤمن أن البرمجة ليست مجرد كتابة أكواد، بل هي فن لحل المشكلات وتحسين حياة الناس."
+    },
+    en: {
+        name: "Yamen",
+        title: "Software Engineer | Laravel & Java Specialist",
+        email: "your.email@example.com",
+        linkedin: "LinkedIn",
+        skillsTitle: "Technical Skills",
+        projectsTitle: "Software Projects",
+        footerText: "© 2026 Yamen - All Rights Reserved",
+        detailsBtn: "View Details",
+        statProjects: "Completed Projects",
+        statYears: "Learning Years",
+        statPassion: "Passion for Learning",
+        statCoffee: "Coffee Cups",
+        aboutTitle: "👋 About Me",
+        aboutDesc1: "Student at Faculty of Information Engineering - 5th Year (Software Engineering). Specialized in web development with Laravel and passionate about turning ideas into practical software solutions.",
+        aboutDesc2: "What sets me apart is my continuous passion for learning. I'm always exploring new technologies and love solving complex problems creatively. I believe programming is not just about writing code, but an art of problem-solving and improving people's lives."
+    }
+};
+
+let currentLang = 'ar';
 
 // عرض تفاصيل المشروع في المودال
 function showProjectDetails(projectId) {
@@ -131,32 +181,6 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// بيانات الترجمة
-const translations = {
-    ar: {
-        name: "يامن",
-        title: "مهندس برمجيات | متخصص في Laravel و Java",
-        email: "your.email@example.com",
-        linkedin: "LinkedIn",
-        skillsTitle: "المهارات التقنية",
-        projectsTitle: "المشاريع البرمجية",
-        footerText: "© 2026 يامن - جميع الحقوق محفوظة",
-        detailsBtn: "عرض التفاصيل"
-    },
-    en: {
-        name: "Yamen",
-        title: "Software Engineer | Laravel & Java Specialist",
-        email: "your.email@example.com",
-        linkedin: "LinkedIn",
-        skillsTitle: "Technical Skills",
-        projectsTitle: "Software Projects",
-        footerText: "© 2026 Yamen - All Rights Reserved",
-        detailsBtn: "View Details"
-    }
-};
-
-let currentLang = 'ar';
-
 // تبديل اللغة
 document.getElementById('langToggle').addEventListener('click', function() {
     currentLang = currentLang === 'ar' ? 'en' : 'ar';
@@ -165,8 +189,18 @@ document.getElementById('langToggle').addEventListener('click', function() {
     document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = currentLang;
     
-    // تغيير نص الزر
-    this.textContent = currentLang === 'ar' ? 'English' : 'العربية';
+    // تغيير نص الزر مع الأيقونات
+    const langText = document.querySelector('.lang-text');
+    const langIcons = document.querySelectorAll('.lang-icon');
+    if (currentLang === 'ar') {
+        langText.textContent = 'English';
+        langIcons[0].textContent = '🇸🇦';
+        langIcons[1].textContent = '🇬🇧';
+    } else {
+        langText.textContent = 'العربية';
+        langIcons[0].textContent = '🇬🇧';
+        langIcons[1].textContent = '🇸🇦';
+    }
     
     // تحديث النصوص الثابتة
     document.getElementById('name').textContent = translations[currentLang].name;
@@ -181,6 +215,15 @@ document.getElementById('langToggle').addEventListener('click', function() {
     document.querySelectorAll('.details-btn').forEach(btn => {
         btn.textContent = translations[currentLang].detailsBtn;
     });
+    
+    // تحديث الإحصائيات وقسم "من أنا"
+    document.getElementById('statProjects').textContent = translations[currentLang].statProjects;
+    document.getElementById('statYears').textContent = translations[currentLang].statYears;
+    document.getElementById('statPassion').textContent = translations[currentLang].statPassion;
+    document.getElementById('statCoffee').textContent = translations[currentLang].statCoffee;
+    document.getElementById('aboutTitle').textContent = translations[currentLang].aboutTitle;
+    document.getElementById('aboutDesc1').textContent = translations[currentLang].aboutDesc1;
+    document.getElementById('aboutDesc2').textContent = translations[currentLang].aboutDesc2;
 });
 
 // تفعيل الوضع الليلي بناءً على تفضيلات النظام
@@ -190,3 +233,4 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
 
 // إظهار رسالة ترحيب في الكونسول
 console.log('مرحباً بك في موقع يامن الشخصي! 👋');
+console.log('Animal Association project is now properly documented as a Laravel-based animal shelter management system 🐾');
