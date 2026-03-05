@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>يامن - مهندس برمجيات | Portfolio</title>
+    <title>يامن - مهندس برمجيات</title>
     
-    <!-- Font Awesome للأيقونات -->
+    <!-- Font Awesome أيقونات خفيفة -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- AOS Library للحركات -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- ملف CSS -->
     <link rel="stylesheet" href="style.css">
@@ -27,103 +24,46 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <div class="profile-wrapper" data-aos="fade-down">
+            <div class="profile-wrapper">
                 <div class="profile-image">
                     <i class="fas fa-code"></i>
                 </div>
                 <h1 id="name">يامن</h1>
-                <p id="title" class="subtitle">مهندس برمجيات | متخصص في Laravel و Java</p>
+                <p id="title" class="subtitle">مهندس برمجيات | Laravel & Java</p>
             </div>
             
-            <div class="contact-info" data-aos="fade-up" data-aos-delay="200">
-                <a href="mailto:your.email@example.com" id="email"><i class="fas fa-envelope"></i> your.email@example.com</a>
+            <div class="contact-info">
+                <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i> <span id="email">your.email@example.com</span></a>
                 <a href="https://github.com/yamenya11" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" id="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i> <span id="linkedin">LinkedIn</span></a>
             </div>
         </div>
     </header>
 
-    <!-- قسم الإحصائيات -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card" data-aos="zoom-in">
-                    <i class="fas fa-code"></i>
-                    <span class="stat-number">5+</span>
-                    <span class="stat-label" id="statProjects">مشاريع كاملة</span>
-                </div>
-                <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fas fa-laptop-code"></i>
-                    <span class="stat-number">3</span>
-                    <span class="stat-label" id="statYears">سنوات تعلم</span>
-                </div>
-                <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fas fa-heart"></i>
-                    <span class="stat-number">∞</span>
-                    <span class="stat-label" id="statPassion">شغف بالتعلم</span>
-                </div>
-                <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
-                    <i class="fas fa-mug-hot"></i>
-                    <span class="stat-number">1000+</span>
-                    <span class="stat-label" id="statCoffee">فنجان قهوة</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم "من أنا" -->
+    <!-- قسم "من أنا" سريع -->
     <section class="about">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text" data-aos="fade-left">
-                    <h2 id="aboutTitle">👋 من أنا</h2>
-                    <p id="aboutDesc1">
-                        طالب في كلية الهندسة المعلوماتية - السنة الخامسة (برمجيات). 
-                        متخصص في تطوير تطبيقات الويب باستخدام Laravel وأحب تحويل الأفكار إلى حلول برمجية عملية.
-                    </p>
-                    <p id="aboutDesc2">
-                        ما يميزني هو <strong>شغفي بالتعلم المستمر</strong>، دائماً أبحث عن التقنيات الجديدة 
-                        وأحب حل المشكلات المعقدة بطريقة إبداعية. أؤمن أن البرمجة ليست مجرد كتابة أكواد، 
-                        بل هي فن لحل المشكلات وتحسين حياة الناس.
-                    </p>
-                    <div class="about-tags">
-                        <span class="about-tag"><i class="fas fa-search"></i> الباحث الدؤوب</span>
-                        <span class="about-tag"><i class="fas fa-lightbulb"></i> محب للتعلم</span>
-                        <span class="about-tag"><i class="fas fa-users"></i> فريق عمل</span>
-                        <span class="about-tag"><i class="fas fa-rocket"></i> شغوف بالتطوير</span>
-                    </div>
-                </div>
-                <div class="about-image" data-aos="fade-right">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-            </div>
+            <h2 id="aboutTitle">👋 من أنا</h2>
+            <p id="aboutDesc1">
+                طالب هندسة معلوماتية - سنة خامسة، متخصص في Laravel. 
+                أحب التعلم وحل المشكلات البرمجية.
+            </p>
         </div>
     </section>
 
     <!-- المهارات -->
     <section class="skills">
         <div class="container">
-            <h2 id="skillsTitle" data-aos="fade-down">المهارات التقنية</h2>
-            <div class="skills-grid" data-aos="fade-up">
+            <h2 id="skillsTitle">المهارات</h2>
+            <div class="skills-grid">
                 <span class="skill-tag">Laravel</span>
                 <span class="skill-tag">PHP</span>
                 <span class="skill-tag">Java</span>
-                <span class="skill-tag">C# (Basics)</span>
                 <span class="skill-tag">MySQL</span>
-                <span class="skill-tag">RESTful API</span>
                 <span class="skill-tag">Design Patterns</span>
                 <span class="skill-tag">Clean Code</span>
-                <span class="skill-tag">SOLID Principles</span>
-                <span class="skill-tag">OOP</span>
-                <span class="skill-tag">MVC</span>
-                <span class="skill-tag">ORM (Eloquent)</span>
-                <span class="skill-tag">Caching (Redis)</span>
-                <span class="skill-tag">Logging & Monitoring</span>
-                <span class="skill-tag">Problem Solving</span>
-                <span class="skill-tag">Authentication</span>
-                <span class="skill-tag">Authorization</span>
-                <span class="skill-tag">Bootstrap</span>
-                <span class="skill-tag">Admin Panel</span>
+                <span class="skill-tag">SOLID</span>
+                <span class="skill-tag">REST API</span>
             </div>
         </div>
     </section>
@@ -131,140 +71,92 @@
     <!-- المشاريع -->
     <section class="projects">
         <div class="container">
-            <h2 id="projectsTitle" data-aos="fade-down">المشاريع البرمجية</h2>
-            <div class="projects-grid" id="projectsGrid">
-                <!-- مشروع 1: Banking System -->
-                <div class="project-card" data-aos="flip-right" data-project="1">
-                    <div class="project-header">
-                        <h3>🏦 Banking System</h3>
-                        <a href="https://github.com/yamenya11/BankingSystem-" target="_blank" class="github-link">
-                            <i class="fab fa-github"></i> 
-                        </a>
-                    </div>
-                    <p class="project-description">نظام بنكي متكامل بتطبيق أنماط التصميم (Composite, Factory, Observer, State, Repository, Strategy, Chain) مع تحسينات الأداء (Caching, Pagination, Redis).</p>
+            <h2 id="projectsTitle">المشاريع</h2>
+            <div class="projects-grid">
+                
+                <!-- 1. Banking System -->
+                <div class="project-card">
+                    <h3>🏦 Banking System</h3>
+                    <p>نظام بنكي بأنماط التصميم (Factory, Observer, State, Repository) مع Redis و Pagination.</p>
                     <div class="project-tech">
-                        <span>Laravel</span>
-                        <span>MySQL</span>
-                        <span>Redis</span>
-                        <span>Design Patterns</span>
+                        <span>Laravel</span><span>MySQL</span><span>Redis</span>
                     </div>
-                    <button class="details-btn" onclick="showProjectDetails(1)">عرض التفاصيل</button>
+                    <a href="https://github.com/yamenya11/BankingSystem-" target="_blank" class="github-link-small">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
                 </div>
 
-                <!-- مشروع 2: Government Complaints System -->
-                <div class="project-card" data-aos="flip-right" data-aos-delay="100" data-project="2">
-                    <div class="project-header">
-                        <h3>⚖️ Government Complaints System</h3>
-                        <a href="https://github.com/Government-complaints-system/Government-complaints-system-laravel" target="_blank" class="github-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <p class="project-description">نظام الشكاوى الحكومي مع تطبيق Clean Code, SOLID, الأمان (Auth, OTP), Caching, Eager Loading, Audit History, Logging, Backup.</p>
+                <!-- 2. Government Complaints -->
+                <div class="project-card">
+                    <h3>⚖️ Government Complaints</h3>
+                    <p>نظام شكاوى حكومي مع Clean Code, SOLID, OTP, Caching, Audit, Backup.</p>
                     <div class="project-tech">
-                        <span>Laravel</span>
-                        <span>MySQL</span>
-                        <span>Redis</span>
-                        <span>Security</span>
+                        <span>Laravel</span><span>MySQL</span><span>Redis</span>
                     </div>
-                    <button class="details-btn" onclick="showProjectDetails(2)">عرض التفاصيل</button>
+                    <a href="https://github.com/Government-complaints-system/Government-complaints-system-laravel" target="_blank" class="github-link-small">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
                 </div>
 
-                <!-- مشروع 3: Crypto Puzzle -->
-                <div class="project-card" data-aos="flip-right" data-aos-delay="200" data-project="3">
-                    <div class="project-header">
-                        <h3>🧩 Crypto Puzzle</h3>
-                        <a href="https://github.com/yamenya11/Crypto-Puzzle" target="_blank" class="github-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <p class="project-description">لعبة ألغاز بجافا تستخدم مصفوفة 2D للبحث عن أرقام متطابقة ودمجها لتوليد هدايا عشوائية يمكن استبدالها بنقاط في متجر اللعبة.</p>
+                <!-- 3. Crypto Puzzle -->
+                <div class="project-card">
+                    <h3>🧩 Crypto Puzzle</h3>
+                    <p>لعبة جافا بمصفوفة 2D، دمج الأرقام وتوليد هدايا عشوائية للتبادل بنقاط.</p>
                     <div class="project-tech">
-                        <span>Java</span>
-                        <span>2D Arrays</span>
-                        <span>Swing</span>
-                        <span>Game Logic</span>
+                        <span>Java</span><span>2D Arrays</span><span>Swing</span>
                     </div>
-                    <button class="details-btn" onclick="showProjectDetails(3)">عرض التفاصيل</button>
+                    <a href="https://github.com/yamenya11/Crypto-Puzzle" target="_blank" class="github-link-small">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
                 </div>
 
-                <!-- مشروع 4: Secret Number Game -->
-                <div class="project-card" data-aos="flip-right" data-aos-delay="300" data-project="4">
-                    <div class="project-header">
-                        <h3>🔢 Secret Number Game</h3>
-                        <a href="https://github.com/yamenya11/algorithmSecretNumberGame-" target="_blank" class="github-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <p class="project-description">لعبة تخمين الرقم السري بلغة جافا مع نظام حماية خاص يسمح للـ "الدمن" فقط بمعرفة الرقم من خلال نمط كلمة مرور.</p>
+                <!-- 4. Secret Number Game -->
+                <div class="project-card">
+                    <h3>🔢 Secret Number Game</h3>
+                    <p>لعبة تخمين الرقم السري مع نظام حماية للدمن بكلمة مرور خاصة.</p>
                     <div class="project-tech">
-                        <span>Java</span>
-                        <span>Algorithms</span>
-                        <span>Security</span>
-                        <span>Game Logic</span>
+                        <span>Java</span><span>Algorithms</span><span>Security</span>
                     </div>
-                    <button class="details-btn" onclick="showProjectDetails(4)">عرض التفاصيل</button>
+                    <a href="https://github.com/yamenya11/algorithmSecretNumberGame-" target="_blank" class="github-link-small">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
                 </div>
 
-                <!-- مشروع 5: Animal Association - نظام إدارة جمعية حيون (Laravel) - محدث -->
-                <div class="project-card" data-aos="flip-right" data-aos-delay="400" data-project="5">
-                    <div class="project-header">
-                        <h3>🐾 Animal Association - جمعية حيون</h3>
-                        <a href="https://github.com/yamenya11/Animal-Association" target="_blank" class="github-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <p class="project-description">نظام متكامل لإدارة جمعية حيون لرعاية وتبني الحيوانات، يشمل إدارة الحيوانات، طلبات التبني، التبرعات، والأقسام الداخلية. تم تطويره باستخدام Laravel.</p>
+                <!-- 5. Animal Association (Laravel) -->
+                <div class="project-card">
+                    <h3>🐾 جمعية حيون</h3>
+                    <p>نظام Laravel متكامل لإدارة جمعية رعاية الحيوانات: تبني، تبرعات، أقسام، موظفين.</p>
                     <div class="project-tech">
-                        <span>Laravel</span>
-                        <span>MySQL</span>
-                        <span>PHP</span>
-                        <span>Bootstrap</span>
-                        <span>Admin Panel</span>
+                        <span>Laravel</span><span>MySQL</span><span>Bootstrap</span>
                     </div>
-                    <button class="details-btn" onclick="showProjectDetails(5)">عرض التفاصيل</button>
+                    <a href="https://github.com/yamenya11/Animal-Association" target="_blank" class="github-link-small">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
                 </div>
 
-                <!-- مشروع 6: Commang Tool -->
-                <div class="project-card" data-aos="flip-right" data-aos-delay="500" data-project="6">
-                    <div class="project-header">
-                        <h3>🔧 Commang</h3>
-                        <a href="https://github.com/yamenya11/comang" target="_blank" class="github-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <p class="project-description">أداة سطر أوامر لتسهيل المهام المتكررة وأتمتة العمليات اليومية.</p>
+                <!-- 6. Commang -->
+                <div class="project-card">
+                    <h3>🔧 Commang</h3>
+                    <p>أداة سطر أوامر لأتمتة المهام المتكررة.</p>
                     <div class="project-tech">
-                        <span>Java</span>
-                        <span>CLI</span>
-                        <span>Automation</span>
+                        <span>Java</span><span>CLI</span><span>Automation</span>
                     </div>
-                    <button class="details-btn" onclick="showProjectDetails(6)">عرض التفاصيل</button>
+                    <a href="https://github.com/yamenya11/comang" target="_blank" class="github-link-small">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal for Project Details -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div id="modalBody">
-                <!-- المحتوى يتحمل ديناميكياً من JavaScript -->
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p id="footerText">© 2026 يامن - جميع الحقوق محفوظة</p>
+            <p id="footerText">© 2026 يامن</p>
         </div>
     </footer>
 
-    <!-- AOS Library للحركات -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- ملف JavaScript -->
+    <!-- JavaScript خفيف -->
     <script src="script.js"></script>
 </body>
 </html>
