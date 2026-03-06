@@ -2,25 +2,37 @@
 const translations = {
     ar: {
         name: "يامن",
-        title: "مهندس برمجيات | Laravel & Java",
+        title: "مهندس برمجيات | Laravel Developer",
         email: "your.email@example.com",
         linkedin: "LinkedIn",
-        skillsTitle: "المهارات",
-        projectsTitle: "المشاريع",
-        footerText: "© 2026 يامن",
+        skillsTitle: "التقنيات التي أعرفها",
+        projectsTitle: "مشاريعي",
+        footerText: "© 2026 يامن - Laravel Developer",
         aboutTitle: "👋 من أنا",
-        aboutDesc1: "طالب هندسة معلوماتية - سنة خامسة، متخصص في Laravel. أحب التعلم وحل المشكلات البرمجية."
+        aboutDesc1: "طالب في كلية الهندسة المعلوماتية - السنة الخامسة (برمجيات). لدي خبرة سنة واحدة في تطوير تطبيقات الويب باستخدام Laravel، وخلال هذه الفترة طورت عدة مشاريع عملية تطبق أنماط التصميم ومبادئ Clean Code.",
+        aboutDesc2: "ما يميزني هو قدرتي على التعلم بسرعة والتكيف مع التقنيات الجديدة. أؤمن أن البرمجة رحلة تعلم مستمرة، وأنا دائم البحث والتطوير لأقدم أفضل الحلول البرمجية.",
+        aboutQuickLearner: "سنة واحدة خبرة + تعلم سريع = جاهز لأي تحدٍ!",
+        backendTitle: "Backend",
+        databaseTitle: "قواعد البيانات",
+        frontendTitle: "Frontend",
+        architectureTitle: "هندسة البرمجيات"
     },
     en: {
         name: "Yamen",
-        title: "Software Engineer | Laravel & Java",
+        title: "Software Engineer | Laravel Developer",
         email: "your.email@example.com",
         linkedin: "LinkedIn",
-        skillsTitle: "Skills",
-        projectsTitle: "Projects",
-        footerText: "© 2026 Yamen",
+        skillsTitle: "Technologies I Know",
+        projectsTitle: "My Projects",
+        footerText: "© 2026 Yamen - Laravel Developer",
         aboutTitle: "👋 About Me",
-        aboutDesc1: "Information Engineering student - 5th year, specialized in Laravel. I love learning and solving programming problems."
+        aboutDesc1: "Information Engineering student - 5th Year (Software). I have 1 year of experience in web development with Laravel, during which I built several practical projects applying Design Patterns and Clean Code principles.",
+        aboutDesc2: "What sets me apart is my ability to learn quickly and adapt to new technologies. I believe programming is a continuous learning journey, and I'm always researching and improving to deliver the best software solutions.",
+        aboutQuickLearner: "1 year experience + fast learning = ready for any challenge!",
+        backendTitle: "Backend",
+        databaseTitle: "Databases",
+        frontendTitle: "Frontend",
+        architectureTitle: "Software Architecture"
     }
 };
 
@@ -57,4 +69,27 @@ document.getElementById('langToggle').addEventListener('click', function() {
     document.getElementById('footerText').textContent = translations[currentLang].footerText;
     document.getElementById('aboutTitle').textContent = translations[currentLang].aboutTitle;
     document.getElementById('aboutDesc1').textContent = translations[currentLang].aboutDesc1;
+    document.getElementById('aboutDesc2').textContent = translations[currentLang].aboutDesc2;
+    document.getElementById('aboutQuickLearner').textContent = translations[currentLang].aboutQuickLearner;
+    
+    // عناوين أقسام المهارات
+    document.getElementById('backendTitle').textContent = translations[currentLang].backendTitle;
+    document.getElementById('databaseTitle').textContent = translations[currentLang].databaseTitle;
+    document.getElementById('frontendTitle').textContent = translations[currentLang].frontendTitle;
+    document.getElementById('architectureTitle').textContent = translations[currentLang].architectureTitle;
+});
+
+// تمرير سلس عند النقر على روابط التنقل
+document.querySelectorAll('.nav-tag').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
 });
