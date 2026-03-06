@@ -1,9 +1,8 @@
-// الترجمة
 const translations = {
     ar: {
         name: "يامن",
-        title: "مهندس برمجيات | Laravel Developer",
-        email: "your.email@example.com",
+        title: "Laravel Developer | مهندس برمجيات",
+        email: "yamenjajem709@gmail.com",
         linkedin: "LinkedIn",
         skillsTitle: "التقنيات التي أعرفها",
         projectsTitle: "مشاريعي",
@@ -19,8 +18,8 @@ const translations = {
     },
     en: {
         name: "Yamen",
-        title: "Software Engineer | Laravel Developer",
-        email: "your.email@example.com",
+        title: "Laravel Developer | Software Engineer",
+        email: "yamenjajem709@gmail.com",
         linkedin: "LinkedIn",
         skillsTitle: "Technologies I Know",
         projectsTitle: "My Projects",
@@ -38,14 +37,11 @@ const translations = {
 
 let currentLang = 'ar';
 
-// تبديل اللغة
 document.getElementById('langToggle').addEventListener('click', function() {
     currentLang = currentLang === 'ar' ? 'en' : 'ar';
     
-    // اتجاه الصفحة
     document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
     
-    // نص الزر
     const langText = document.querySelector('.lang-text');
     const langIcons = document.querySelectorAll('.lang-icon');
     
@@ -59,11 +55,9 @@ document.getElementById('langToggle').addEventListener('click', function() {
         langIcons[1].textContent = '🇸🇦';
     }
     
-    // تحديث النصوص
     document.getElementById('name').textContent = translations[currentLang].name;
     document.getElementById('title').textContent = translations[currentLang].title;
-    document.getElementById('email').textContent = translations[currentLang].email;
-    document.getElementById('linkedin').textContent = translations[currentLang].linkedin;
+    document.querySelector('.contact-info a:first-child span').textContent = translations[currentLang].email;
     document.getElementById('skillsTitle').textContent = translations[currentLang].skillsTitle;
     document.getElementById('projectsTitle').textContent = translations[currentLang].projectsTitle;
     document.getElementById('footerText').textContent = translations[currentLang].footerText;
@@ -71,15 +65,13 @@ document.getElementById('langToggle').addEventListener('click', function() {
     document.getElementById('aboutDesc1').textContent = translations[currentLang].aboutDesc1;
     document.getElementById('aboutDesc2').textContent = translations[currentLang].aboutDesc2;
     document.getElementById('aboutQuickLearner').textContent = translations[currentLang].aboutQuickLearner;
-    
-    // عناوين أقسام المهارات
     document.getElementById('backendTitle').textContent = translations[currentLang].backendTitle;
     document.getElementById('databaseTitle').textContent = translations[currentLang].databaseTitle;
     document.getElementById('frontendTitle').textContent = translations[currentLang].frontendTitle;
     document.getElementById('architectureTitle').textContent = translations[currentLang].architectureTitle;
 });
 
-// تمرير سلس عند النقر على روابط التنقل
+// تمرير سلس
 document.querySelectorAll('.nav-tag').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
