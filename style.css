@@ -1,4 +1,3 @@
-/* reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +5,14 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: #0a0a0a;
     color: #fff;
     line-height: 1.6;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+    font-size: 16px; /* حجم أساسي ثابت */
 }
 
 /* خلفية متحركة سوداء */
@@ -61,25 +61,17 @@ body {
 }
 
 @keyframes move {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-    33% {
-        transform: translate(5%, 5%) scale(1.1);
-    }
-    66% {
-        transform: translate(-5%, 2%) scale(0.9);
-    }
-    100% {
-        transform: translate(3%, -5%) scale(1.05);
-    }
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(5%, 5%) scale(1.1); }
+    66% { transform: translate(-5%, 2%) scale(0.9); }
+    100% { transform: translate(3%, -5%) scale(1.05); }
 }
 
 /* الحاوية الرئيسية */
 .main-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
     position: relative;
     z-index: 1;
 }
@@ -87,39 +79,41 @@ body {
 /* زر الترجمة */
 .language-switch {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 15px;
+    left: 15px;
     z-index: 1000;
 }
 
 .lang-btn {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 8px 16px;
-    border-radius: 30px;
+    padding: 10px 16px;
+    border-radius: 40px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
     font-weight: bold;
+    font-size: 14px;
     transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .lang-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.25);
     transform: scale(1.05);
 }
 
 /* Header */
 header {
     text-align: center;
-    padding: 60px 0 30px;
+    padding: 70px 0 30px;
 }
 
 .profile-wrapper {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .profile-image {
@@ -146,39 +140,45 @@ header {
 }
 
 h1 {
-    font-size: clamp(2em, 5vw, 3em);
+    font-size: 2.5em;
     margin-bottom: 10px;
     background: linear-gradient(135deg, #fff, #e0e0e0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    word-break: break-word;
 }
 
 .subtitle {
-    font-size: clamp(1em, 3vw, 1.2em);
+    font-size: 1.1em;
     color: rgba(255, 255, 255, 0.9);
+    padding: 0 10px;
 }
 
 /* معلومات التواصل */
 .contact-info {
     display: flex;
     justify-content: center;
-    gap: clamp(15px, 3vw, 30px);
+    gap: 12px;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin: 20px 0 10px;
 }
 
 .contact-info a {
     color: white;
     text-decoration: none;
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    padding: 8px 16px;
+    padding: 12px 18px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
+    border-radius: 50px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.3s;
+    font-size: 14px;
+    min-width: 140px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .contact-info a:hover {
@@ -186,30 +186,44 @@ h1 {
     transform: translateY(-3px);
 }
 
+/* تنسيق خاص لرقم الهاتف */
+.phone-link {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+}
+
+.phone-link span {
+    direction: ltr;
+    unicode-bidi: embed;
+}
+
 /* وسوم التنقل */
 .nav-tags {
     display: flex;
     justify-content: center;
-    gap: clamp(10px, 2vw, 20px);
+    gap: 8px;
     flex-wrap: wrap;
-    margin: 30px 0;
+    margin: 25px 0 30px;
     position: sticky;
-    top: 20px;
+    top: 15px;
     z-index: 99;
 }
 
 .nav-tag {
     color: white;
     text-decoration: none;
-    padding: 8px 20px;
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 16px;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     display: flex;
     align-items: center;
     gap: 8px;
     transition: all 0.3s;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .nav-tag:hover {
@@ -219,27 +233,28 @@ h1 {
 
 /* الأقسام العامة */
 section {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.07);
     backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: clamp(20px, 4vw, 40px);
-    margin: 30px 0;
+    border-radius: 24px;
+    padding: 25px 20px;
+    margin: 25px 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
 }
 
 h2 {
-    font-size: clamp(1.5em, 4vw, 2em);
-    margin-bottom: 25px;
+    font-size: 1.8em;
+    margin-bottom: 20px;
     color: #fff;
     text-align: center;
 }
 
 /* قسم من أنا */
 .about-text {
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.7;
     margin-bottom: 20px;
-    font-size: clamp(1em, 2.5vw, 1.1em);
+    font-size: 1rem;
     text-align: justify;
 }
 
@@ -253,11 +268,11 @@ h2 {
 .about-highlight {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 18px;
+    border-radius: 16px;
     text-align: center;
-    font-size: clamp(1em, 2.5vw, 1.2em);
-    margin-top: 30px;
+    font-size: 1.1em;
+    margin-top: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -276,7 +291,7 @@ h2 {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: clamp(1.1em, 3vw, 1.3em);
+    font-size: 1.3em;
 }
 
 .skills-category h3 i {
@@ -286,17 +301,18 @@ h2 {
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
 }
 
 .skill-tag {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.12);
     color: white;
-    padding: 8px 16px;
-    border-radius: 30px;
-    font-size: 0.9em;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 16px;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .skill-tag:hover {
@@ -306,7 +322,7 @@ h2 {
 
 .skill-tag small {
     font-size: 0.8em;
-    opacity: 0.8;
+    opacity: 0.9;
     margin-right: 5px;
 }
 
@@ -326,10 +342,11 @@ h2 {
 .project-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
 .project-card:hover {
@@ -339,40 +356,45 @@ h2 {
 
 .project-card h3 {
     color: #fff;
-    margin-bottom: 10px;
-    font-size: 1.2em;
+    margin-bottom: 12px;
+    font-size: 1.3em;
 }
 
 .project-card p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
     margin-bottom: 15px;
+    line-height: 1.6;
 }
 
 .project-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
-    margin-bottom: 15px;
+    gap: 6px;
+    margin-bottom: 18px;
 }
 
 .project-tech span {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 0.8em;
+    padding: 5px 12px;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
 .github-link-small {
     display: inline-block;
     background: rgba(255, 255, 255, 0.2);
     color: white;
-    padding: 8px 15px;
-    border-radius: 8px;
+    padding: 10px 18px;
+    border-radius: 30px;
     text-decoration: none;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    text-align: center;
 }
 
 .github-link-small:hover {
@@ -392,9 +414,9 @@ footer {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.07);
     backdrop-filter: blur(10px);
-    border-radius: 15px;
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -405,13 +427,25 @@ footer {
 
 .footer-links a {
     color: white;
-    font-size: 1.3em;
+    font-size: 1.5em;
     transition: all 0.3s;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
 }
 
 .footer-links a:hover {
     color: #ffd700;
     transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.footer-phone {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
 }
 
 /* تمرير سلس */
@@ -422,7 +456,7 @@ html {
 /* للغة الإنجليزية */
 [dir="ltr"] .language-switch {
     left: auto;
-    right: 20px;
+    right: 15px;
 }
 
 [dir="ltr"] .nav-tag i {
@@ -430,10 +464,14 @@ html {
     margin-right: 0;
 }
 
-/* Responsive للجوال */
+/* ===== تحسينات خاصة للجوال ===== */
 @media (max-width: 768px) {
     .main-container {
-        padding: 15px;
+        padding: 12px;
+    }
+    
+    header {
+        padding: 60px 0 20px;
     }
     
     .profile-image {
@@ -442,53 +480,160 @@ html {
     }
     
     .profile-image i {
-        font-size: 2.5em;
+        font-size: 3em;
     }
     
-    .contact-info a {
-        padding: 6px 12px;
-        font-size: 0.9em;
-    }
-    
-    .nav-tag {
-        padding: 6px 12px;
-        font-size: 0.9em;
-    }
-    
-    .nav-text {
-        display: none;
-    }
-    
-    section {
-        padding: 20px;
-    }
-    
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
     h1 {
-        font-size: 1.8em;
+        font-size: 2em;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
     }
     
     .contact-info {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        gap: 10px;
     }
     
     .contact-info a {
         width: 100%;
         justify-content: center;
+        padding: 14px 12px;
+        font-size: 15px;
+    }
+    
+    .nav-tags {
+        gap: 6px;
+    }
+    
+    .nav-tag {
+        flex: 1;
+        justify-content: center;
+        padding: 12px 8px;
+        font-size: 13px;
+    }
+    
+    .nav-text {
+        display: inline; /* نظهر النص على الجوال */
+    }
+    
+    section {
+        padding: 20px 15px;
+    }
+    
+    h2 {
+        font-size: 1.6em;
+    }
+    
+    .skills-grid {
+        gap: 8px;
+    }
+    
+    .skill-tag {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+        flex: 1 1 auto;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        padding: 10px;
+    }
+    
+    .language-switch {
+        top: 10px;
+        left: 10px;
+    }
+    
+    .lang-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .profile-image {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .profile-image i {
+        font-size: 2.5em;
+    }
+    
+    .nav-tags {
+        flex-wrap: wrap;
+    }
+    
+    .nav-tag {
+        flex: 1 1 calc(50% - 6px);
+        font-size: 13px;
+        padding: 12px 6px;
+    }
+    
+    .about-text {
+        font-size: 0.95rem;
+        text-align: left;
     }
     
     .about-highlight {
-        flex-direction: column;
+        font-size: 1rem;
+        padding: 15px 10px;
+    }
+    
+    .skill-tag {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .project-card {
+        padding: 18px;
+    }
+    
+    .project-card h3 {
+        font-size: 1.2em;
+    }
+    
+    .footer-links a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3em;
+    }
+}
+
+/* للشاشات الصغيرة جداً */
+@media (max-width: 360px) {
+    .nav-tag {
+        flex: 1 1 100%;
+    }
+    
+    .skill-tag {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+    
+    .contact-info a {
+        font-size: 14px;
+        padding: 12px 10px;
     }
 }

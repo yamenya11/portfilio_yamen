@@ -14,7 +14,8 @@ const translations = {
         backendTitle: "Backend",
         databaseTitle: "قواعد البيانات",
         frontendTitle: "Frontend",
-        architectureTitle: "هندسة البرمجيات"
+        architectureTitle: "هندسة البرمجيات",
+        phone: "اتصل بي"
     },
     en: {
         name: "Yamen",
@@ -31,7 +32,8 @@ const translations = {
         backendTitle: "Backend",
         databaseTitle: "Databases",
         frontendTitle: "Frontend",
-        architectureTitle: "Software Architecture"
+        architectureTitle: "Software Architecture",
+        phone: "Call Me"
     }
 };
 
@@ -57,7 +59,11 @@ document.getElementById('langToggle').addEventListener('click', function() {
     
     document.getElementById('name').textContent = translations[currentLang].name;
     document.getElementById('title').textContent = translations[currentLang].title;
-    document.querySelector('.contact-info a:first-child span').textContent = translations[currentLang].email;
+    
+    // تحديث البريد الإلكتروني (النص فقط)
+    const emailLinks = document.querySelectorAll('.contact-info a[href^="mailto"] span');
+    emailLinks.forEach(span => span.textContent = translations[currentLang].email);
+    
     document.getElementById('skillsTitle').textContent = translations[currentLang].skillsTitle;
     document.getElementById('projectsTitle').textContent = translations[currentLang].projectsTitle;
     document.getElementById('footerText').textContent = translations[currentLang].footerText;
@@ -85,3 +91,6 @@ document.querySelectorAll('.nav-tag').forEach(link => {
         }
     });
 });
+
+// رسالة ترحيب
+console.log('مرحباً! رقم الهاتف: 0932307869');
