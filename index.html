@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>يامن - Laravel Developer</title>
+    <title>يامن - full stack Developer</title>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -36,7 +36,7 @@
                     <i class="fas fa-code"></i>
                 </div>
                 <h1 id="name">يامن</h1>
-                <p id="title" class="subtitle">Laravel Developer | مهندس برمجيات</p>
+<p id="title" class="subtitle">Full Stack Developer | Software Engineer</p>
             </div>
             
             <div class="contact-info">
@@ -58,12 +58,14 @@
         </header>
 
         <!-- وسوم التنقل -->
-        <div class="nav-tags">
-            <a href="#about" class="nav-tag"><i class="fas fa-user"></i> <span class="nav-text">من أنا</span></a>
-            <a href="#skills" class="nav-tag"><i class="fas fa-code"></i> <span class="nav-text">التقنيات</span></a>
-            <a href="#projects" class="nav-tag"><i class="fas fa-project-diagram"></i> <span class="nav-text">المشاريع</span></a>
-            <a href="#contact" class="nav-tag"><i class="fas fa-envelope"></i> <span class="nav-text">التواصل</span></a>
-        </div>
+     <!-- وسوم التنقل -->
+<div class="nav-tags">
+    <a href="#about" class="nav-tag"><i class="fas fa-user"></i> <span class="nav-text">من أنا</span></a>
+    <a href="#skills" class="nav-tag"><i class="fas fa-code"></i> <span class="nav-text">التقنيات</span></a>
+    <a href="#projects" class="nav-tag"><i class="fas fa-project-diagram"></i> <span class="nav-text">المشاريع</span></a>
+    <a href="#gallery" class="nav-tag"><i class="fas fa-images"></i> <span class="nav-text">المعرض</span></a>
+    <a href="#contact" class="nav-tag"><i class="fas fa-envelope"></i> <span class="nav-text">التواصل</span></a>
+</div>
 
         <!-- قسم من أنا -->
         <section id="about" class="about">
@@ -200,19 +202,35 @@
                 </div>
 
                 <!-- Commang -->
-                <div class="project-card">
-                    <h3>🔧 Commang</h3>
-                    <p>أداة سطر أوامر لأتمتة المهام المتكررة.</p>
-                    <div class="project-tech">
-                        <span>Java</span><span>CLI</span><span>Automation</span>
-                    </div>
-                    <a href="https://github.com/yamenya11/comang" target="_blank" class="github-link-small">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
+             <!-- Commang -->
+        <div class="project-card">
+            <h3>🔧 Commang – Compiler Framework</h3>
+            <p>مترجم (Compiler) متخصص في تحليل اللغات وترجمتها. يقوم ببناء شجرة التحليل المجردة (AST) وإدارة جدول الرموز (Symbol Table) باستخدام Java و ANTLR.</p>
+            <div class="project-tech">
+                <span>Java</span>
+                <span>ANTLR</span>
+                <span>Compiler Design</span>
+                <span>AST</span>
             </div>
+            <a href="https://github.com/yamenya11/comang" target="_blank" class="github-link-small">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
         </section>
 
+            <!-- قسم معرض الصور -->
+    <section id="gallery" class="gallery-section">
+        <h2 id="galleryTitle"> معرض الأعمال</h2>
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">الكل</button>
+            <button class="filter-btn" data-filter="admin">لوحة الإدارة</button>
+            <button class="filter-btn" data-filter="auth">المصادقة</button>
+            <button class="filter-btn" data-filter="client">واجهة العميل</button>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- سيتم إضافة الصور بواسطة JavaScript -->
+        </div>
+    </section>
         <!-- Footer -->
         <footer id="contact">
             <div class="footer-content">
