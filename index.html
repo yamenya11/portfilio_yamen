@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>يامن - full stack Developer</title>
+    <title>يامن - Full Stack Developer</title>
+    <meta name="description" content="يامن مطور Full Stack متخصص في Laravel و Java، خبرة في قواعد البيانات Oracle وأدوات Agile">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -28,6 +29,14 @@
         </button>
     </div>
 
+    <!-- زر تبديل الوضع (Dark/Light) -->
+    <div class="theme-switch">
+        <button id="themeToggle" class="theme-btn">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        </button>
+    </div>
+
     <div class="main-container">
         <!-- Header -->
         <header>
@@ -36,11 +45,11 @@
                     <i class="fas fa-code"></i>
                 </div>
                 <h1 id="name">يامن</h1>
-<p id="title" class="subtitle">Full Stack Developer | Software Engineer</p>
+                <p id="title" class="subtitle">Full Stack Developer | Software Engineer</p>
             </div>
             
             <div class="contact-info">
-                <a href="mailto:yamenjajem709@gmail.com">
+                <a href="mailto:yamennajem709@gmail.com">
                     <i class="fas fa-envelope"></i> 
                     <span>yamennajem709@gmail.com</span>
                 </a>
@@ -48,24 +57,30 @@
                     <i class="fab fa-github"></i> 
                     <span>GitHub</span>
                 </a>
-              
-                <!-- رقم الهاتف الجديد -->
                 <a href="tel:0932307869" class="phone-link">
                     <i class="fas fa-phone"></i> 
                     <span dir="ltr">0932307869</span>
                 </a>
             </div>
+            
+            <!-- زر تحميل CV -->
+            <div class="cv-download">
+                <a href="assets/images/cv%20yamen_imad_najem_developer26.pdf" download class="cv-btn">
+                    <i class="fas fa-download"></i> 
+                    <span>تحميل السيرة الذاتية (CV)</span>
+                </a>
+            </div>
         </header>
 
         <!-- وسوم التنقل -->
-     <!-- وسوم التنقل -->
-<div class="nav-tags">
-    <a href="#about" class="nav-tag"><i class="fas fa-user"></i> <span class="nav-text">من أنا</span></a>
-    <a href="#skills" class="nav-tag"><i class="fas fa-code"></i> <span class="nav-text">التقنيات</span></a>
-    <a href="#projects" class="nav-tag"><i class="fas fa-project-diagram"></i> <span class="nav-text">المشاريع</span></a>
-    <a href="#gallery" class="nav-tag"><i class="fas fa-images"></i> <span class="nav-text">المعرض</span></a>
-    <a href="#contact" class="nav-tag"><i class="fas fa-envelope"></i> <span class="nav-text">التواصل</span></a>
-</div>
+        <div class="nav-tags">
+            <a href="#about" class="nav-tag"><i class="fas fa-user"></i> <span class="nav-text">من أنا</span></a>
+            <a href="#skills" class="nav-tag"><i class="fas fa-code"></i> <span class="nav-text">التقنيات</span></a>
+            <a href="#projects" class="nav-tag"><i class="fas fa-project-diagram"></i> <span class="nav-text">المشاريع</span></a>
+            <a href="#oracle" class="nav-tag"><i class="fas fa-database"></i> <span class="nav-text">Oracle</span></a>
+            <a href="#gallery" class="nav-tag"><i class="fas fa-images"></i> <span class="nav-text">المعرض</span></a>
+            <a href="#contact" class="nav-tag"><i class="fas fa-envelope"></i> <span class="nav-text">التواصل</span></a>
+        </div>
 
         <!-- قسم من أنا -->
         <section id="about" class="about">
@@ -79,12 +94,8 @@
                 <p id="aboutDesc2" class="about-text">
                     <strong>ما يميزني هو قدرتي على التعلم بسرعة</strong> والتكيف مع التقنيات الجديدة. 
                     أؤمن أن البرمجة رحلة تعلم مستمرة، وأنا دائم البحث والتطوير لأقدم أفضل الحلول البرمجية.
-                    أطمح لأن أصبح خبيراً في Laravel والمساهمة في مشاريع مفتوحة المصدر.
                 </p>
-                <div class="about-highlight">
-                    <i class="fas fa-rocket"></i>
-                    <span id="aboutQuickLearner">سنة واحدة خبرة + تعلم سريع = جاهز لأي تحدٍ!</span>
-                </div>
+                
             </div>
         </section>
 
@@ -95,7 +106,7 @@
             <div class="skills-category">
                 <h3><i class="fas fa-bolt"></i> <span id="backendTitle">Backend</span></h3>
                 <div class="skills-grid">
-                    <span class="skill-tag">Laravel <small>(سنة)</small></span>
+                    <span class="skill-tag">Laravel</span>
                     <span class="skill-tag">PHP</span>
                     <span class="skill-tag">Java</span>
                     <span class="skill-tag">C#</span>
@@ -135,116 +146,159 @@
                     <span class="skill-tag">Problem Solving</span>
                 </div>
             </div>
+
+            <div class="skills-category">
+                <h3><i class="fas fa-tools"></i> <span id="toolsTitle">الأدوات والتقنيات</span></h3>
+                <div class="skills-grid">
+                    <span class="skill-tag">Jira (Agile/Scrum)</span>
+                    <span class="skill-tag">Apidog</span>
+                    <span class="skill-tag">Postman</span>
+                    <span class="skill-tag">Git/GitHub</span>
+                    <span class="skill-tag">VS Code</span>
+                </div>
+            </div>
         </section>
 
         <!-- المشاريع -->
         <section id="projects" class="projects">
             <h2 id="projectsTitle">مشاريعي</h2>
             <div class="projects-grid">
-                <!-- Banking System -->
                 <div class="project-card">
                     <h3>🏦 Banking System</h3>
                     <p>نظام بنكي بأنماط التصميم مع Redis و Pagination.</p>
                     <div class="project-tech">
                         <span>Laravel</span><span>MySQL</span><span>Redis</span>
                     </div>
-                    <a href="https://github.com/yamenya11/BankingSystem-" target="_blank" class="github-link-small">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    <a href="https://github.com/yamenya11/BankingSystem-" target="_blank" class="github-link-small">GitHub <i class="fas fa-external-link-alt"></i></a>
                 </div>
 
-                <!-- Government Complaints -->
                 <div class="project-card">
                     <h3>⚖️ Government Complaints</h3>
-                    <p>نظام شكاوى حكومي مع Clean Code, SOLID, OTP, Caching.</p>
+                    <p>نظام شكاوى حكومي مع Clean Code, OTP, Caching.</p>
                     <div class="project-tech">
                         <span>Laravel</span><span>MySQL</span><span>Redis</span>
                     </div>
-                    <a href="https://github.com/Government-complaints-system/Government-complaints-system-laravel" target="_blank" class="github-link-small">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    <a href="https://github.com/Government-complaints-system/Government-complaints-system-laravel" target="_blank" class="github-link-small">GitHub <i class="fas fa-external-link-alt"></i></a>
                 </div>
 
-                <!-- Crypto Puzzle -->
                 <div class="project-card">
                     <h3>🧩 Crypto Puzzle</h3>
-                    <p>لعبة جافا بمصفوفة 2D، دمج الأرقام وتوليد هدايا.</p>
+                    <p>لعبة جافا بمصفوفة 2D لدمج الأرقام وتوليد هدايا.</p>
                     <div class="project-tech">
                         <span>Java</span><span>2D Arrays</span><span>Swing</span>
                     </div>
-                    <a href="https://github.com/yamenya11/Crypto-Puzzle" target="_blank" class="github-link-small">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    <a href="https://github.com/yamenya11/Crypto-Puzzle" target="_blank" class="github-link-small">GitHub <i class="fas fa-external-link-alt"></i></a>
                 </div>
 
-                <!-- Secret Number Game -->
                 <div class="project-card">
                     <h3>🔢 Secret Number Game</h3>
                     <p>لعبة تخمين الرقم السري مع نظام حماية للدمن.</p>
                     <div class="project-tech">
                         <span>Java</span><span>Algorithms</span><span>Security</span>
                     </div>
-                    <a href="https://github.com/yamenya11/algorithmSecretNumberGame-" target="_blank" class="github-link-small">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    <a href="https://github.com/yamenya11/algorithmSecretNumberGame-" target="_blank" class="github-link-small">GitHub <i class="fas fa-external-link-alt"></i></a>
                 </div>
 
-                <!-- Animal Association -->
                 <div class="project-card">
                     <h3>🐾 جمعية حيون</h3>
                     <p>نظام Laravel لإدارة جمعية رعاية الحيوانات.</p>
                     <div class="project-tech">
                         <span>Laravel</span><span>MySQL</span><span>Bootstrap</span>
                     </div>
-                    <a href="https://github.com/yamenya11/Animal-Association" target="_blank" class="github-link-small">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    <a href="https://github.com/yamenya11/Animal-Association" target="_blank" class="github-link-small">GitHub <i class="fas fa-external-link-alt"></i></a>
                 </div>
 
-                <!-- Commang -->
-             <!-- Commang -->
-        <div class="project-card">
-            <h3>🔧 Commang – Compiler Framework</h3>
-            <p>مترجم (Compiler) متخصص في تحليل اللغات وترجمتها. يقوم ببناء شجرة التحليل المجردة (AST) وإدارة جدول الرموز (Symbol Table) باستخدام Java و ANTLR.</p>
-            <div class="project-tech">
-                <span>Java</span>
-                <span>ANTLR</span>
-                <span>Compiler Design</span>
-                <span>AST</span>
+                <div class="project-card">
+                    <h3>🔧 Commang – Compiler</h3>
+                    <p>مترجم (Compiler) باستخدام ANTLR لتحليل اللغات وبناء AST.</p>
+                    <div class="project-tech">
+                        <span>Java</span><span>ANTLR</span><span>Compiler Design</span>
+                    </div>
+                    <a href="https://github.com/yamenya11/comang" target="_blank" class="github-link-small">GitHub <i class="fas fa-external-link-alt"></i></a>
+                </div>
             </div>
-            <a href="https://github.com/yamenya11/comang" target="_blank" class="github-link-small">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-        </div>
         </section>
 
-            <!-- قسم معرض الصور -->
-    <section id="gallery" class="gallery-section">
-        <h2 id="galleryTitle"> معرض الأعمال</h2>
-        <div class="gallery-filters">
-            <button class="filter-btn active" data-filter="all">الكل</button>
-            <button class="filter-btn" data-filter="admin">لوحة الإدارة</button>
-            <button class="filter-btn" data-filter="auth">المصادقة</button>
-            <button class="filter-btn" data-filter="client">واجهة العميل</button>
-        </div>
-        <div class="gallery-grid" id="galleryGrid">
-            <!-- سيتم إضافة الصور بواسطة JavaScript -->
-        </div>
-    </section>
+        <!-- Oracle Expertise -->
+        <section id="oracle" class="oracle-section">
+            <h2><i class="fas fa-database"></i> <span id="oracleTitle">Oracle Database Expertise</span></h2>
+            <p id="oracleDesc">خبرة عملية في مشاريع Data Engineering باستخدام Oracle Database:</p>
+            <div class="oracle-grid">
+                <div class="oracle-item">👥 Users / Roles / Permissions (GRANT)</div>
+                <div class="oracle-item">📦 Tablespaces Management</div>
+                <div class="oracle-item">⚡ Triggers & Stored Procedures</div>
+                <div class="oracle-item">📊 Materialized Views Optimization</div>
+                <div class="oracle-item">🔒 Audit Logs & Security Layer</div>
+                <div class="oracle-item">📈 Partitioning (Performance Scaling)</div>
+                <div class="oracle-item">🏗️ Star Schema Data Warehouse</div>
+                <div class="oracle-item">📅 Time Dimension Modeling</div>
+                <div class="oracle-item">🔍 Query Optimization (Indexing)</div>
+            </div>
+        </section>
+
+        <!-- معرض الصور -->
+        <section id="gallery" class="gallery-section">
+            <h2 id="galleryTitle">📸 معرض الأعمال</h2>
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="admin">لوحة الإدارة</button>
+                <button class="filter-btn" data-filter="auth">المصادقة</button>
+                <button class="filter-btn" data-filter="client">واجهة العميل</button>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-category="admin">
+                    <img src="assets/images/admin/dashboard.png" alt="Dashboard" loading="lazy" onerror="this.src='https://placehold.co/400x250/667eea/white?text=Dashboard'">
+                    <div class="gallery-caption">لوحة تحكم المدير</div>
+                </div>
+                <div class="gallery-item" data-category="admin">
+                    <img src="assets/images/admin/manageaccount.png" alt="Manage Accounts" loading="lazy" onerror="this.src='https://placehold.co/400x250/764ba2/white?text=Manage+Accounts'">
+                    <div class="gallery-caption">إدارة الحسابات</div>
+                </div>
+                <div class="gallery-item" data-category="auth">
+                    <img src="assets/images/auth/login.png" alt="Login Page" loading="lazy" onerror="this.src='https://placehold.co/400x250/667eea/white?text=Login'">
+                    <div class="gallery-caption">صفحة تسجيل الدخول</div>
+                </div>
+                <div class="gallery-item" data-category="auth">
+                    <img src="assets/images/auth/register.png" alt="Register Page" loading="lazy" onerror="this.src='https://placehold.co/400x250/764ba2/white?text=Register'">
+                    <div class="gallery-caption">صفحة التسجيل</div>
+                </div>
+                <div class="gallery-item" data-category="auth">
+                    <img src="assets/images/auth/welcome.png" alt="Welcome Page" loading="lazy" onerror="this.src='https://placehold.co/400x250/667eea/white?text=Welcome'">
+                    <div class="gallery-caption">صفحة الترحيب</div>
+                </div>
+                <div class="gallery-item" data-category="client">
+                    <img src="assets/images/client/account.png" alt="Account" loading="lazy" onerror="this.src='https://placehold.co/400x250/764ba2/white?text=Account'">
+                    <div class="gallery-caption">معلومات الحساب</div>
+                </div>
+                <div class="gallery-item" data-category="client">
+                    <img src="assets/images/client/createaccount.png" alt="Create Account" loading="lazy" onerror="this.src='https://placehold.co/400x250/667eea/white?text=Create+Account'">
+                    <div class="gallery-caption">إنشاء حساب جديد</div>
+                </div>
+                <div class="gallery-item" data-category="client">
+                    <img src="assets/images/client/home.png" alt="Home Page" loading="lazy" onerror="this.src='https://placehold.co/400x250/764ba2/white?text=Home'">
+                    <div class="gallery-caption">الصفحة الرئيسية</div>
+                </div>
+                <div class="gallery-item" data-category="client">
+                    <img src="assets/images/client/transaction.png" alt="Transactions" loading="lazy" onerror="this.src='https://placehold.co/400x250/667eea/white?text=Transactions'">
+                    <div class="gallery-caption">المعاملات المالية</div>
+                </div>
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer id="contact">
             <div class="footer-content">
-                <p id="footerText">© 2026 يامن - Laravel Developer</p>
+                <p id="footerText">© 2026 يامن - Full Stack Developer</p>
                 <div class="footer-links">
-                    <a href="mailto:yamennajem709@gmail.com" title="البريد الإلكتروني"><i class="fas fa-envelope"></i></a>
-                    <a href="https://github.com/yamenya11" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    
-                    <a href="tel:0932307869" title="اتصل بي" class="footer-phone"><i class="fas fa-phone"></i></a>
+                    <a href="mailto:yamennajem709@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/yamenya11" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="tel:0932307869"><i class="fas fa-phone"></i></a>
                 </div>
             </div>
         </footer>
     </div>
 
+    <!-- ملف JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
