@@ -682,3 +682,29 @@ footer {
     right: auto;
     left: 20px;
 }
+
+/* مشروع مميز */
+.project-card.featured {
+    border: 2px solid var(--gradient-start);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card.featured::before {
+    content: '⭐ مشروع التخرج';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.project-card.featured .github-link-small {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+}
