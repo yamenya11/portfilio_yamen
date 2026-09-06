@@ -1,4 +1,6 @@
-// الترجمة
+// ============================================
+// الترجمة والتحكم باللغة
+// ============================================
 let currentLang = 'ar';
 
 const translations = {
@@ -17,6 +19,23 @@ const translations = {
         architectureTitle: "هندسة البرمجيات",
         toolsTitle: "الأدوات والتقنيات",
         projectsTitle: "مشاريعي",
+        
+        // ترجمة مشاريع محددة (إذا أردت إضافة ترجمة لكل مشروع مستقبلاً)
+        project1Title: "🏥 نظام إدارة العيادات المتقدم (ACMS)",
+        project1Desc: "منصة طبية شاملة تدمج جميع الخدمات الطبية (عيادات، صيدليات، إسعاف، استشارات فيديو، رعاية منزلية، مختبرات) في تطبيق واحد. تم تطويرها كـ مشروع تخرج.",
+        project2Title: "🏦 Banking System",
+        project2Desc: "نظام بنكي بأنماط التصميم مع Redis و Pagination.",
+        project3Title: "⚖️ Government Complaints",
+        project3Desc: "نظام شكاوى حكومي مع Clean Code, OTP, Caching.",
+        
+        // ترجمة مشروع Data Engineering
+        deTitle: "SQL Advanced & Data Engineering Pipeline",
+        deDesc: "مشروع متكامل لبناء خط أنابيب بيانات (Data Pipeline) يهدف إلى تحليل بيانات المطاعم. يتضمن بناء نظام OOP (Object Oriented Programming) باستخدام Python، وقراءة البيانات ومعالجتها باستخدام Pandas، وتخزينها وتحليلها باستخدام SQLite مع تطبيق استعلامات SQL متقدمة (Window Functions, CTEs).",
+        deMetric1: "معاملة",
+        deMetric2: "مراحل ETL",
+        deMetric3: "تحليل بيانات",
+        deBtn: "عرض المشروع على GitHub",
+        
         oracleTitle: "Oracle Database Expertise",
         oracleDesc: "خبرة عملية في مشاريع Data Engineering باستخدام Oracle Database:",
         galleryTitle: "📸 معرض الأعمال",
@@ -37,6 +56,23 @@ const translations = {
         architectureTitle: "Software Architecture",
         toolsTitle: "Tools & Technologies",
         projectsTitle: "My Projects",
+        
+        // ترجمة مشاريع محددة
+        project1Title: "🏥 Advanced Clinic Management System (ACMS)",
+        project1Desc: "A comprehensive medical platform integrating all medical services (clinics, pharmacies, ambulance, video consultations, home care, laboratories) into one app. Developed as a graduation project.",
+        project2Title: "🏦 Banking System",
+        project2Desc: "Banking system with Design Patterns, Redis, and Pagination.",
+        project3Title: "⚖️ Government Complaints",
+        project3Desc: "Government complaint system with Clean Code, OTP, and Caching.",
+        
+        // ترجمة مشروع Data Engineering
+        deTitle: "SQL Advanced & Data Engineering Pipeline",
+        deDesc: "A complete Data Pipeline project aimed at analyzing restaurant data. It includes building an OOP (Object Oriented Programming) system using Python, reading and processing data with Pandas, and storing/analyzing it using SQLite with advanced SQL queries (Window Functions, CTEs).",
+        deMetric1: "Transactions",
+        deMetric2: "ETL Stages",
+        deMetric3: "Data Analysis",
+        deBtn: "View Project on GitHub",
+        
         oracleTitle: "Oracle Database Expertise",
         oracleDesc: "Practical experience in Data Engineering projects using Oracle Database:",
         galleryTitle: "📸 Work Gallery",
@@ -62,7 +98,7 @@ function toggleTheme() {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
 
-// ========== Language Toggle ==========
+// ========== Language Toggle (Main Translation Logic) ==========
 function initLanguageToggle() {
     const langToggle = document.getElementById('langToggle');
     if (langToggle) {
@@ -86,7 +122,7 @@ function initLanguageToggle() {
                 }
             }
             
-            // تحديث النصوص
+            // 1. تحديث النصوص الأساسية (Header, About, Skills)
             const nameEl = document.getElementById('name');
             const titleEl = document.getElementById('title');
             const aboutTitle = document.getElementById('aboutTitle');
@@ -124,6 +160,40 @@ function initLanguageToggle() {
             if (galleryTitle) galleryTitle.innerHTML = translations[currentLang].galleryTitle;
             if (footerText) footerText.textContent = translations[currentLang].footerText;
             if (cvBtnSpan) cvBtnSpan.textContent = translations[currentLang].cvBtn;
+            
+            // 2. تحديث نصوص المشاريع (مشروع التخرج، البنكي، الشكاوى)
+            const p1Title = document.querySelector('.project-card.featured h3');
+            const p1Desc = document.querySelector('.project-card.featured p');
+            
+            const p2Title = document.querySelectorAll('.project-card:not(.featured) h3')[0];
+            const p2Desc = document.querySelectorAll('.project-card:not(.featured) p')[0];
+            
+            const p3Title = document.querySelectorAll('.project-card:not(.featured) h3')[1];
+            const p3Desc = document.querySelectorAll('.project-card:not(.featured) p')[1];
+            
+            if (p1Title) p1Title.textContent = translations[currentLang].project1Title;
+            if (p1Desc) p1Desc.textContent = translations[currentLang].project1Desc;
+            
+            if (p2Title) p2Title.textContent = translations[currentLang].project2Title;
+            if (p2Desc) p2Desc.textContent = translations[currentLang].project2Desc;
+            
+            if (p3Title) p3Title.textContent = translations[currentLang].project3Title;
+            if (p3Desc) p3Desc.textContent = translations[currentLang].project3Desc;
+            
+            // 3. تحديث مشروع Data Engineering
+            const deTitle = document.querySelector('.project-card:not(.featured) .project-type + h3');
+            const deDesc = document.querySelector('.project-card:not(.featured) .project-type + h3 + p');
+            const deMetric1 = document.querySelector('.project-metrics div:nth-child(1) span');
+            const deMetric2 = document.querySelector('.project-metrics div:nth-child(2) span');
+            const deMetric3 = document.querySelector('.project-metrics div:nth-child(3) span');
+            const deBtn = document.querySelector('.project-card .btn-primary');
+            
+            if (deTitle) deTitle.textContent = translations[currentLang].deTitle;
+            if (deDesc) deDesc.textContent = translations[currentLang].deDesc;
+            if (deMetric1) deMetric1.textContent = translations[currentLang].deMetric1;
+            if (deMetric2) deMetric2.textContent = translations[currentLang].deMetric2;
+            if (deMetric3) deMetric3.textContent = translations[currentLang].deMetric3;
+            if (deBtn) deBtn.innerHTML = `<i class="fa-brands fa-github"></i> ${translations[currentLang].deBtn}`;
         });
     }
 }
@@ -160,7 +230,6 @@ function initGalleryFilter() {
             galleryItems.forEach(item => {
                 if (filter === 'all' || item.getAttribute('data-category') === filter) {
                     item.style.display = 'block';
-                    // إضافة تأثير بسيط
                     item.style.animation = 'none';
                     setTimeout(() => {
                         item.style.animation = 'fadeIn 0.4s ease';
@@ -178,23 +247,13 @@ function addAnimations() {
     const style = document.createElement('style');
     style.textContent = `
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
         
-        .fade-in {
-            animation: fadeIn 0.6s ease forwards;
-        }
+        .fade-in { animation: fadeIn 0.6s ease forwards; }
         
-        section {
-            animation: fadeIn 0.8s ease forwards;
-        }
+        section { animation: fadeIn 0.8s ease forwards; }
         
         .skill-tag, .project-card, .oracle-item, .gallery-item {
             animation: fadeIn 0.5s ease backwards;
@@ -233,10 +292,7 @@ function addScrollToTop() {
     });
     
     btn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
