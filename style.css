@@ -1,3 +1,7 @@
+/* =========================================
+   Yamen Portfolio - Modern Glassmorphism 
+   ========================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,45 +9,43 @@
 }
 
 :root {
-    /* Light Mode (default) */
-    --bg-primary: #f5f5f7;
-    --bg-secondary: rgba(255, 255, 255, 0.9);
+    /* Light Mode */
+    --bg-primary: #f0f2f5;
+    --bg-secondary: rgba(255, 255, 255, 0.7);
     --text-primary: #1a1a2e;
-    --text-secondary: #2d2d3f;
-    --card-bg: rgba(255, 255, 255, 0.95);
-    --border-color: rgba(0, 0, 0, 0.1);
+    --text-secondary: #4a4a68;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --border-color: rgba(255, 255, 255, 0.5);
     --gradient-start: #667eea;
     --gradient-end: #764ba2;
-    --nav-bg: rgba(255, 255, 255, 0.9);
-    --tag-bg: rgba(0, 0, 0, 0.08);
-    --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    --tag-bg: rgba(102, 126, 234, 0.1);
+    --shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    --hover-shadow: 0 15px 50px rgba(31, 38, 135, 0.25);
 }
 
 body.dark {
-    --bg-primary: #0a0a0a;
-    --bg-secondary: rgba(255, 255, 255, 0.05);
-    --text-primary: #ffffff;
-    --text-secondary: rgba(255, 255, 255, 0.9);
-    --card-bg: rgba(255, 255, 255, 0.08);
+    --bg-primary: #0f172a;
+    --bg-secondary: rgba(30, 41, 59, 0.7);
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --card-bg: rgba(30, 41, 59, 0.8);
     --border-color: rgba(255, 255, 255, 0.1);
-    --gradient-start: #667eea;
-    --gradient-end: #764ba2;
-    --nav-bg: rgba(0, 0, 0, 0.8);
-    --tag-bg: rgba(255, 255, 255, 0.12);
-    --shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    --tag-bg: rgba(102, 126, 234, 0.2);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --hover-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: var(--bg-primary);
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.7;
     min-height: 100vh;
     overflow-x: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: all 0.4s ease;
 }
 
-/* خلفية متحركة */
+/* ========== الخلفية المتحركة ========== */
 .animated-bg {
     position: fixed;
     top: 0;
@@ -52,46 +54,26 @@ body {
     height: 100%;
     z-index: -2;
     background: var(--bg-primary);
-    transition: background 0.3s ease;
 }
 
 .gradient-circle {
     position: absolute;
-    width: 60vmax;
-    height: 60vmax;
+    width: 50vmax;
+    height: 50vmax;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    opacity: 0.15;
-    filter: blur(80px);
-    animation: move 20s infinite alternate ease-in-out;
+    opacity: 0.2;
+    filter: blur(100px);
+    animation: move 25s infinite alternate ease-in-out;
 }
 
 body.dark .gradient-circle {
-    opacity: 0.12;
+    opacity: 0.15;
 }
 
-.gradient-circle:nth-child(1) {
-    top: -20%;
-    left: -20%;
-    animation-duration: 25s;
-}
-
-.gradient-circle:nth-child(2) {
-    bottom: -20%;
-    right: -20%;
-    animation-duration: 30s;
-    animation-delay: -5s;
-}
-
-.gradient-circle:nth-child(3) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80vmax;
-    height: 80vmax;
-    animation-duration: 35s;
-    animation-delay: -10s;
-}
+.gradient-circle:nth-child(1) { top: -10%; left: -10%; animation-duration: 30s; }
+.gradient-circle:nth-child(2) { bottom: -10%; right: -10%; animation-duration: 35s; animation-delay: -5s; }
+.gradient-circle:nth-child(3) { top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70vmax; height: 70vmax; animation-duration: 40s; animation-delay: -10s; }
 
 @keyframes move {
     0% { transform: translate(0, 0) scale(1); }
@@ -100,83 +82,78 @@ body.dark .gradient-circle {
     100% { transform: translate(3%, -5%) scale(1.05); }
 }
 
-/* الحاوية الرئيسية */
+/* ========== الحاوية الرئيسية ========== */
 .main-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
     position: relative;
     z-index: 1;
 }
 
-/* أزرار التحكم */
-.language-switch {
+/* ========== أزرار التحكم ========== */
+.language-switch, .theme-switch {
     position: fixed;
     top: 20px;
-    left: 20px;
     z-index: 1000;
 }
 
-.theme-switch {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
+.language-switch { left: 20px; }
+.theme-switch { right: 20px; }
 
 .lang-btn, .theme-btn {
-    background: var(--nav-bg);
-    backdrop-filter: blur(10px);
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
     color: var(--text-primary);
     border: 1px solid var(--border-color);
     padding: 10px 20px;
-    border-radius: 40px;
+    border-radius: 50px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
-    font-weight: bold;
-    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
 }
 
-.theme-btn {
-    padding: 10px 15px;
-}
+.theme-btn { padding: 10px 15px; }
 
-.theme-btn .fa-sun {
-    display: none;
-}
-
-body.dark .theme-btn .fa-moon {
-    display: none;
-}
-
-body.dark .theme-btn .fa-sun {
-    display: inline-block;
-}
+.theme-btn .fa-sun { display: none; }
+body.dark .theme-btn .fa-moon { display: none; }
+body.dark .theme-btn .fa-sun { display: inline-block; }
 
 .lang-btn:hover, .theme-btn:hover {
-    transform: scale(1.05);
+    transform: translateY(-3px) scale(1.05);
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     color: white;
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
 }
 
-/* Header */
+/* ========== الهيدر ========== */
 header {
     text-align: center;
-    padding: 60px 0 20px;
+    padding: 70px 0 20px;
+    margin-bottom: 20px;
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border-radius: 30px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
 }
 
 .profile-image {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     border-radius: 50%;
     margin: 0 auto 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid rgba(255, 255, 255, 0.3);
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
     animation: float 6s ease-in-out infinite;
 }
 
@@ -186,31 +163,35 @@ header {
 }
 
 .profile-image i {
-    font-size: 3em;
+    font-size: 3.5em;
     color: white;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     margin-bottom: 10px;
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    letter-spacing: -1px;
 }
 
 .subtitle {
     font-size: 1.2em;
     color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
 /* معلومات التواصل */
 .contact-info {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
     margin: 20px 0;
+    padding: 0 20px;
 }
 
 .contact-info a {
@@ -220,50 +201,56 @@ h1 {
     align-items: center;
     gap: 8px;
     padding: 10px 20px;
-    background: var(--card-bg);
-    border-radius: 40px;
+    background: var(--bg-secondary);
+    border-radius: 50px;
     backdrop-filter: blur(10px);
-    transition: all 0.3s;
+    transition: all 0.4s ease;
     border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .contact-info a:hover {
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     color: white;
     transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
 }
 
 .phone-link {
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)) !important;
     color: white !important;
+    border: none !important;
 }
 
 /* زر تحميل CV */
 .cv-download {
-    margin: 20px 0;
+    margin-top: 20px;
 }
 
 .cv-btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 12px 25px;
+    padding: 14px 30px;
     background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
     color: white;
-    border-radius: 40px;
+    border-radius: 50px;
     text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.4s ease;
     border: none;
     cursor: pointer;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
 .cv-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
 }
 
-/* وسوم التنقل */
+/* ========== وسوم التنقل ========== */
 .nav-tags {
     display: flex;
     justify-content: center;
@@ -272,21 +259,26 @@ h1 {
     margin: 30px 0;
     position: sticky;
     top: 15px;
-    z-index: 99;
+    z-index: 999;
+    padding: 10px;
+    background: var(--bg-secondary);
+    backdrop-filter: blur(15px);
+    border-radius: 60px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
 }
 
 .nav-tag {
     color: var(--text-primary);
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 40px;
-    background: var(--nav-bg);
-    backdrop-filter: blur(10px);
+    padding: 10px 18px;
+    border-radius: 50px;
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: all 0.3s;
-    border: 1px solid var(--border-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
 .nav-tag:hover {
@@ -295,61 +287,50 @@ h1 {
     transform: translateY(-3px);
 }
 
-/* الأقسام */
+/* ========== الأقسام ========== */
 section {
     background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    border-radius: 24px;
-    padding: 30px;
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 40px;
     margin: 30px 0;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: var(--shadow);
+    transition: all 0.4s ease;
 }
 
 section:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow);
+    box-shadow: var(--hover-shadow);
 }
 
 h2 {
-    font-size: 2em;
-    margin-bottom: 25px;
+    font-size: 2.2em;
+    margin-bottom: 30px;
     text-align: center;
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-weight: 800;
 }
 
-/* من أنا */
+/* ========== من أنا ========== */
 .about-text {
     color: var(--text-secondary);
-    line-height: 1.8;
+    line-height: 2;
     margin-bottom: 20px;
     font-size: 1.1em;
+    text-align: justify;
 }
 
 .about-text strong {
     color: var(--gradient-start);
 }
 
-.about-highlight {
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    padding: 20px;
-    border-radius: 16px;
-    text-align: center;
-    font-size: 1.2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    color: white;
-}
-
-/* المهارات */
+/* ========== المهارات ========== */
 .skills-category {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .skills-category h3 {
@@ -358,66 +339,94 @@ h2 {
     align-items: center;
     gap: 10px;
     color: var(--text-primary);
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.skills-category h3 i {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.5rem;
 }
 
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
 }
 
 .skill-tag {
     background: var(--tag-bg);
     color: var(--text-primary);
-    padding: 8px 18px;
-    border-radius: 30px;
+    padding: 10px 20px;
+    border-radius: 50px;
     font-size: 0.9rem;
-    transition: all 0.3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
     cursor: pointer;
-    border: 1px solid var(--border-color);
+    border: 1px solid transparent;
 }
 
 .skill-tag:hover {
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     color: white;
-    transform: scale(1.05) translateY(-2px);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
+    border-color: transparent;
 }
 
 .skill-new {
     background: linear-gradient(135deg, #ffd700, #ffa500);
     color: #000;
-    font-weight: bold;
+    font-weight: 800;
+    border: none;
 }
 
-/* المشاريع */
+.skill-new:hover {
+    background: linear-gradient(135deg, #ffa500, #ff8c00);
+    color: white;
+}
+
+/* ========== المشاريع (تصميم موحد وجميل) ========== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
 }
 
 .project-card {
-    background: var(--tag-bg);
-    border-radius: 20px;
-    padding: 20px;
+    background: var(--bg-secondary);
+    border-radius: 25px;
+    padding: 25px;
     transition: all 0.4s ease;
     border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: var(--shadow);
+    box-shadow: var(--hover-shadow);
     border-color: var(--gradient-start);
+    background: var(--card-bg);
 }
 
 .project-card h3 {
     margin-bottom: 10px;
     color: var(--text-primary);
+    font-size: 1.3rem;
+    font-weight: 700;
 }
 
 .project-card p {
     color: var(--text-secondary);
     margin-bottom: 15px;
+    font-size: 0.95rem;
+    line-height: 1.7;
 }
 
 .project-tech {
@@ -431,56 +440,179 @@ h2 {
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     padding: 5px 12px;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 600;
     color: white;
+    opacity: 0.9;
 }
 
 .github-link-small {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--tag-bg);
     color: var(--text-primary);
-    padding: 8px 18px;
+    padding: 10px 20px;
     border-radius: 30px;
     text-decoration: none;
-    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .github-link-small:hover {
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
 }
 
-/* Oracle Section */
+/* ========== مشروع مميز (التخرج) ========== */
+.project-card.featured {
+    border: 2px solid var(--gradient-start);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card.featured::before {
+    content: '⭐ مشروع التخرج';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    z-index: 10;
+}
+
+.project-card.featured .github-link-small {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+}
+
+/* ========== تنسيق مشروع Data Engineering (موحد) ========== */
+.project-card .project-type {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--gradient-start);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+.project-card .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.project-card .tech-tags span {
+    background: var(--tag-bg);
+    color: var(--text-primary);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.project-card .project-metrics {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+}
+
+.project-card .project-metrics div {
+    text-align: center;
+    flex: 1;
+}
+
+.project-card .project-metrics strong {
+    display: block;
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.project-card .project-metrics span {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.project-card .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.project-card .btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(102, 126, 234, 0.4);
+}
+
+.project-card .btn-primary i {
+    margin-left: 8px;
+}
+
+/* ========== Oracle Section ========== */
 .oracle-section {
-    border-right: 4px solid var(--gradient-start);
+    border-right: 5px solid var(--gradient-start);
 }
 
 .oracle-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
     margin-top: 20px;
 }
 
 .oracle-item {
-    background: var(--tag-bg);
-    padding: 12px 18px;
-    border-radius: 12px;
+    background: var(--bg-secondary);
+    padding: 15px 20px;
+    border-radius: 15px;
     font-size: 0.95rem;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     color: var(--text-secondary);
     border: 1px solid var(--border-color);
+    font-weight: 500;
 }
 
 .oracle-item:hover {
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     color: white;
     transform: translateX(5px);
+    box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
 }
 
-/* معرض الصور */
+/* ========== معرض الصور ========== */
 .gallery-filters {
     display: flex;
     justify-content: center;
@@ -490,19 +622,22 @@ h2 {
 }
 
 .filter-btn {
-    background: var(--tag-bg);
+    background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
-    padding: 10px 20px;
-    border-radius: 30px;
+    padding: 10px 25px;
+    border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     color: white;
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
 }
 
 .gallery-grid {
@@ -512,16 +647,17 @@ h2 {
 }
 
 .gallery-item {
-    background: var(--tag-bg);
-    border-radius: 16px;
+    background: var(--bg-secondary);
+    border-radius: 20px;
     overflow: hidden;
-    transition: all 0.3s;
+    transition: all 0.4s ease;
     border: 1px solid var(--border-color);
 }
 
 .gallery-item:hover {
     transform: scale(1.03);
-    box-shadow: var(--shadow);
+    box-shadow: var(--hover-shadow);
+    border-color: var(--gradient-start);
 }
 
 .gallery-item img {
@@ -532,15 +668,17 @@ h2 {
 }
 
 .gallery-caption {
-    padding: 12px;
+    padding: 15px;
     text-align: center;
     color: var(--text-secondary);
     font-size: 0.9rem;
+    font-weight: 600;
 }
 
-/* Footer */
+/* ========== Footer ========== */
 footer {
     margin-top: 40px;
+    text-align: center;
 }
 
 .footer-content {
@@ -549,10 +687,11 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 20px;
+    padding: 20px 30px;
     background: var(--card-bg);
     border-radius: 20px;
     border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
 }
 
 .footer-links {
@@ -563,7 +702,7 @@ footer {
 .footer-links a {
     color: var(--text-primary);
     font-size: 1.3em;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
@@ -571,7 +710,7 @@ footer {
     transform: translateY(-3px);
 }
 
-/* Scrollbar */
+/* ========== Scrollbar ========== */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -585,7 +724,7 @@ footer {
     border-radius: 10px;
 }
 
-/* زر العودة للأعلى */
+/* ========== زر العودة للأعلى ========== */
 .scroll-top-btn {
     position: fixed;
     bottom: 20px;
@@ -599,10 +738,10 @@ footer {
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     z-index: 1000;
     font-size: 1.2rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
 }
 
 .scroll-top-btn.visible {
@@ -611,36 +750,41 @@ footer {
 }
 
 .scroll-top-btn:hover {
-    transform: translateY(-3px);
-    scale: 1.1;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(102, 126, 234, 0.5);
 }
 
-/* Responsive */
+/* ========== Responsive ========== */
 @media (max-width: 768px) {
     .main-container {
         padding: 15px;
     }
     
     h1 {
-        font-size: 2em;
+        font-size: 2.2em;
+    }
+    
+    .nav-tags {
+        padding: 8px;
+        gap: 5px;
     }
     
     .nav-tag {
         padding: 8px 12px;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
     section {
-        padding: 20px;
+        padding: 25px;
+    }
+    
+    .contact-info {
+        gap: 8px;
     }
     
     .contact-info a {
         padding: 8px 15px;
-        font-size: 0.85rem;
-    }
-    
-    .oracle-grid {
-        grid-template-columns: 1fr;
+        font-size: 0.8rem;
     }
     
     .language-switch {
@@ -661,60 +805,15 @@ footer {
     
     .nav-tag {
         justify-content: center;
-    }
-    
-    .skills-grid {
-        justify-content: center;
+        padding: 10px;
     }
     
     .projects-grid {
         grid-template-columns: 1fr;
     }
-}
-
-/* لينكات LTR */
-[dir="ltr"] .language-switch {
-    left: auto;
-    right: 20px;
-}
-
-[dir="ltr"] .theme-switch {
-    right: auto;
-    left: 20px;
-}
-
-/* مشروع مميز */
-.project-card.featured {
-    border: 2px solid var(--gradient-start);
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-    position: relative;
-    overflow: hidden;
-}
-
-.project-card.featured::before {
-    content: '⭐ مشروع التخرج';
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: bold;
-}
-
-.project-card.featured .github-link-small {
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    color: white;
-}
-
-/* تنسيق زر GitHub في المشاريع */
-.project-card .btn-primary i {
-    margin-left: 8px; /* مسافة بين الأيقونة والنص */
-}
-
-.project-card .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
+    
+    .project-card .project-metrics {
+        flex-direction: column;
+        gap: 15px;
+    }
 }
