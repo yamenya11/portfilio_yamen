@@ -1,318 +1,169 @@
-// ============================================
-// الترجمة والتحكم باللغة
-// ============================================
-let currentLang = 'ar';
+// =========================================
+// Yamen Najem Portfolio - Professional Script
+// =========================================
+
+let currentLang = 'en';
 
 const translations = {
-    ar: {
-        name: "يامن",
-        title: "Full Stack Developer | Software Engineer",
-        cvBtn: "تحميل السيرة الذاتية (CV)",
-        aboutTitle: "👋 من أنا",
-        aboutDesc1: "طالب في كلية الهندسة المعلوماتية - السنة الخامسة (برمجيات). لدي خبرة سنة واحدة في تطوير تطبيقات الويب باستخدام Laravel، وخلال هذه الفترة طورت عدة مشاريع عملية تطبق أنماط التصميم ومبادئ Clean Code.",
-        aboutDesc2: "ما يميزني هو قدرتي على التعلم بسرعة والتكيف مع التقنيات الجديدة. أؤمن أن البرمجة رحلة تعلم مستمرة، وأنا دائم البحث والتطوير لأقدم أفضل الحلول البرمجية.",
-        aboutQuickLearner: "سنة واحدة خبرة + تعلم سريع = جاهز لأي تحدٍ!",
-        skillsTitle: "التقنيات التي أعرفها",
-        backendTitle: "Backend",
-        databaseTitle: "قواعد البيانات",
-        frontendTitle: "Frontend",
-        architectureTitle: "هندسة البرمجيات",
-        toolsTitle: "الأدوات والتقنيات",
-        projectsTitle: "مشاريعي",
-        
-        // ترجمة مشاريع محددة (إذا أردت إضافة ترجمة لكل مشروع مستقبلاً)
-        project1Title: "🏥 نظام إدارة العيادات المتقدم (ACMS)",
-        project1Desc: "منصة طبية شاملة تدمج جميع الخدمات الطبية (عيادات، صيدليات، إسعاف، استشارات فيديو، رعاية منزلية، مختبرات) في تطبيق واحد. تم تطويرها كـ مشروع تخرج.",
-        project2Title: "🏦 Banking System",
-        project2Desc: "نظام بنكي بأنماط التصميم مع Redis و Pagination.",
-        project3Title: "⚖️ Government Complaints",
-        project3Desc: "نظام شكاوى حكومي مع Clean Code, OTP, Caching.",
-        
-        // ترجمة مشروع Data Engineering
-        deTitle: "SQL Advanced & Data Engineering Pipeline",
-        deDesc: "مشروع متكامل لبناء خط أنابيب بيانات (Data Pipeline) يهدف إلى تحليل بيانات المطاعم. يتضمن بناء نظام OOP (Object Oriented Programming) باستخدام Python، وقراءة البيانات ومعالجتها باستخدام Pandas، وتخزينها وتحليلها باستخدام SQLite مع تطبيق استعلامات SQL متقدمة (Window Functions, CTEs).",
-        deMetric1: "معاملة",
-        deMetric2: "مراحل ETL",
-        deMetric3: "تحليل بيانات",
-        deBtn: "عرض المشروع على GitHub",
-        
-        oracleTitle: "Oracle Database Expertise",
-        oracleDesc: "خبرة عملية في مشاريع Data Engineering باستخدام Oracle Database:",
-        galleryTitle: "📸 معرض الأعمال",
-        footerText: "© 2026 يامن - Full Stack Developer"
-    },
     en: {
-        name: "Yamen",
-        title: "Full Stack Developer | Software Engineer",
-        cvBtn: "Download CV",
-        aboutTitle: "👋 About Me",
-        aboutDesc1: "5th year Information Engineering student (Software). I have 1 year of experience in web development with Laravel, building projects that apply Design Patterns and Clean Code principles.",
-        aboutDesc2: "What sets me apart is my ability to learn quickly and adapt to new technologies. I believe programming is a continuous learning journey.",
-        aboutQuickLearner: "1 year experience + fast learning = ready for any challenge!",
-        skillsTitle: "Technologies I Know",
-        backendTitle: "Backend",
+        name: "Yamen Najem",
+        title: 'Odoo ERP Developer <span class="divider">|</span> Laravel Backend Developer',
+        heroDesc: "Information Technology Engineering graduate from Damascus University, specializing in Odoo ERP customization and Laravel backend development. I build scalable ERP solutions and modern web applications.",
+        cvBtnText: "Download CV",
+        contactBtnText: "Contact Me",
+        navAbout: "About",
+        navSkills: "Skills",
+        navExperience: "Experience",
+        navProjects: "Projects",
+        navContact: "Contact",
+        aboutTitle: "About Me",
+        aboutDesc1: 'I\'m an <strong>Information Technology Engineering graduate</strong> from Damascus University (Class of 2026), with hands-on experience in <strong>Odoo ERP customization</strong> and <strong>Laravel backend development</strong>.',
+        aboutDesc2: 'I specialize in building custom Odoo modules using Python ORM, XML/QWeb, REST API controllers, and cross-module business process design. I\'m passionate about ERP systems, IoT integration, and delivering impactful business solutions.',
+        aboutDesc3: 'What sets me apart is my <strong>ability to learn quickly</strong> and adapt to new technologies. I believe programming is a continuous learning journey, and I\'m always seeking improvement.',
+        skillsTitle: "Technical Skills",
+        backendTitle: "ERP & Backend",
         databaseTitle: "Databases",
-        frontendTitle: "Frontend",
-        architectureTitle: "Software Architecture",
-        toolsTitle: "Tools & Technologies",
-        projectsTitle: "My Projects",
-        
-        // ترجمة مشاريع محددة
-        project1Title: "🏥 Advanced Clinic Management System (ACMS)",
-        project1Desc: "A comprehensive medical platform integrating all medical services (clinics, pharmacies, ambulance, video consultations, home care, laboratories) into one app. Developed as a graduation project.",
-        project2Title: "🏦 Banking System",
-        project2Desc: "Banking system with Design Patterns, Redis, and Pagination.",
-        project3Title: "⚖️ Government Complaints",
-        project3Desc: "Government complaint system with Clean Code, OTP, and Caching.",
-        
-        // ترجمة مشروع Data Engineering
-        deTitle: "SQL Advanced & Data Engineering Pipeline",
-        deDesc: "A complete Data Pipeline project aimed at analyzing restaurant data. It includes building an OOP (Object Oriented Programming) system using Python, reading and processing data with Pandas, and storing/analyzing it using SQLite with advanced SQL queries (Window Functions, CTEs).",
-        deMetric1: "Transactions",
-        deMetric2: "ETL Stages",
-        deMetric3: "Data Analysis",
-        deBtn: "View Project on GitHub",
-        
-        oracleTitle: "Oracle Database Expertise",
-        oracleDesc: "Practical experience in Data Engineering projects using Oracle Database:",
-        galleryTitle: "📸 Work Gallery",
-        footerText: "© 2026 Yamen - Full Stack Developer"
+        langTitle: "Programming Languages",
+        frontendTitle: "Frontend & Frameworks",
+        architectureTitle: "Software Engineering",
+        toolsTitle: "Tools & DevOps",
+        experienceTitle: "Experience",
+        projectsTitle: "Featured Projects",
+        contactTitle: "Get In Touch",
+        contactSubtitle: "Let's build something amazing together",
+        footerText: "© 2026 Yamen Najem. All rights reserved."
+    },
+    ar: {
+        name: "يامن نجم",
+        title: 'مطور Odoo ERP <span class="divider">|</span> مطور Laravel Backend',
+        heroDesc: "خريج هندسة تقانة المعلومات من جامعة دمشق، متخصص في تخصيص Odoo ERP وتطوير Laravel Backend. أبني حلول ERP قابلة للتوسع وتطبيقات ويب حديثة.",
+        cvBtnText: "تحميل السيرة الذاتية",
+        contactBtnText: "تواصل معي",
+        navAbout: "من أنا",
+        navSkills: "المهارات",
+        navExperience: "الخبرات",
+        navProjects: "المشاريع",
+        navContact: "التواصل",
+        aboutTitle: "من أنا",
+        aboutDesc1: 'أنا <strong>خريج هندسة تقانة المعلومات</strong> من جامعة دمشق (دفعة 2026)، لدي خبرة عملية في <strong>تخصيص Odoo ERP</strong> و<strong>تطوير Laravel Backend</strong>.',
+        aboutDesc2: 'أتخصص في بناء وحدات Odoo المخصصة باستخدام Python ORM و XML/QWeb ووحدات تحكم REST API وتصميم العمليات عبر الوحدات. شغوف بأنظمة ERP وتكامل IoT وتقديم حلول أعمال مؤثرة.',
+        aboutDesc3: 'ما يميزني هو <strong>قدرتي على التعلم السريع</strong> والتكيف مع التقنيات الجديدة. أؤمن أن البرمجة رحلة تعلم مستمرة، وأنا دائماً أسعى للتحسين.',
+        skillsTitle: "المهارات التقنية",
+        backendTitle: "ERP و Backend",
+        databaseTitle: "قواعد البيانات",
+        langTitle: "لغات البرمجة",
+        frontendTitle: "Frontend و Frameworks",
+        architectureTitle: "هندسة البرمجيات",
+        toolsTitle: "الأدوات و DevOps",
+        experienceTitle: "الخبرات",
+        projectsTitle: "المشاريع المميزة",
+        contactTitle: "تواصل معي",
+        contactSubtitle: "لنبنِ شيئاً مذهلاً معاً",
+        footerText: "© 2026 يامن نجم. جميع الحقوق محفوظة."
     }
 };
 
-// ========== Dark/Light Mode ==========
+// ========== Theme Toggle ==========
 function initTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        document.body.classList.add('dark');
-    } else {
-        document.body.classList.remove('dark');
-    }
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.body.className = savedTheme;
 }
 
 function toggleTheme() {
-    document.body.classList.toggle('dark');
-    const isDark = document.body.classList.contains('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    const newTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+    document.body.className = newTheme;
+    localStorage.setItem('theme', newTheme);
 }
 
-// ========== Language Toggle (Main Translation Logic) ==========
+// ========== Language Toggle ==========
 function initLanguageToggle() {
     const langToggle = document.getElementById('langToggle');
-    if (langToggle) {
-        langToggle.addEventListener('click', function() {
-            currentLang = currentLang === 'ar' ? 'en' : 'ar';
-            
-            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-            
-            const langText = document.querySelector('.lang-text');
-            const langIcons = document.querySelectorAll('.lang-icon');
-            
-            if (langText && langIcons.length >= 2) {
-                if (currentLang === 'ar') {
-                    langText.textContent = 'English';
-                    langIcons[0].textContent = '🇸🇦';
-                    langIcons[1].textContent = '🇬🇧';
-                } else {
-                    langText.textContent = 'العربية';
-                    langIcons[0].textContent = '🇬🇧';
-                    langIcons[1].textContent = '🇸🇦';
-                }
-            }
-            
-            // 1. تحديث النصوص الأساسية (Header, About, Skills)
-            const nameEl = document.getElementById('name');
-            const titleEl = document.getElementById('title');
-            const aboutTitle = document.getElementById('aboutTitle');
-            const aboutDesc1 = document.getElementById('aboutDesc1');
-            const aboutDesc2 = document.getElementById('aboutDesc2');
-            const aboutQuick = document.getElementById('aboutQuickLearner');
-            const skillsTitle = document.getElementById('skillsTitle');
-            const backendTitle = document.getElementById('backendTitle');
-            const databaseTitle = document.getElementById('databaseTitle');
-            const frontendTitle = document.getElementById('frontendTitle');
-            const architectureTitle = document.getElementById('architectureTitle');
-            const toolsTitle = document.getElementById('toolsTitle');
-            const projectsTitle = document.getElementById('projectsTitle');
-            const oracleTitle = document.getElementById('oracleTitle');
-            const oracleDesc = document.getElementById('oracleDesc');
-            const galleryTitle = document.getElementById('galleryTitle');
-            const footerText = document.getElementById('footerText');
-            const cvBtnSpan = document.querySelector('.cv-btn span');
-            
-            if (nameEl) nameEl.textContent = translations[currentLang].name;
-            if (titleEl) titleEl.textContent = translations[currentLang].title;
-            if (aboutTitle) aboutTitle.textContent = translations[currentLang].aboutTitle;
-            if (aboutDesc1) aboutDesc1.textContent = translations[currentLang].aboutDesc1;
-            if (aboutDesc2) aboutDesc2.textContent = translations[currentLang].aboutDesc2;
-            if (aboutQuick) aboutQuick.textContent = translations[currentLang].aboutQuickLearner;
-            if (skillsTitle) skillsTitle.textContent = translations[currentLang].skillsTitle;
-            if (backendTitle) backendTitle.textContent = translations[currentLang].backendTitle;
-            if (databaseTitle) databaseTitle.textContent = translations[currentLang].databaseTitle;
-            if (frontendTitle) frontendTitle.textContent = translations[currentLang].frontendTitle;
-            if (architectureTitle) architectureTitle.textContent = translations[currentLang].architectureTitle;
-            if (toolsTitle) toolsTitle.textContent = translations[currentLang].toolsTitle;
-            if (projectsTitle) projectsTitle.textContent = translations[currentLang].projectsTitle;
-            if (oracleTitle) oracleTitle.innerHTML = `<i class="fas fa-database"></i> ${translations[currentLang].oracleTitle}`;
-            if (oracleDesc) oracleDesc.textContent = translations[currentLang].oracleDesc;
-            if (galleryTitle) galleryTitle.innerHTML = translations[currentLang].galleryTitle;
-            if (footerText) footerText.textContent = translations[currentLang].footerText;
-            if (cvBtnSpan) cvBtnSpan.textContent = translations[currentLang].cvBtn;
-            
-            // 2. تحديث نصوص المشاريع (مشروع التخرج، البنكي، الشكاوى)
-            const p1Title = document.querySelector('.project-card.featured h3');
-            const p1Desc = document.querySelector('.project-card.featured p');
-            
-            const p2Title = document.querySelectorAll('.project-card:not(.featured) h3')[0];
-            const p2Desc = document.querySelectorAll('.project-card:not(.featured) p')[0];
-            
-            const p3Title = document.querySelectorAll('.project-card:not(.featured) h3')[1];
-            const p3Desc = document.querySelectorAll('.project-card:not(.featured) p')[1];
-            
-            if (p1Title) p1Title.textContent = translations[currentLang].project1Title;
-            if (p1Desc) p1Desc.textContent = translations[currentLang].project1Desc;
-            
-            if (p2Title) p2Title.textContent = translations[currentLang].project2Title;
-            if (p2Desc) p2Desc.textContent = translations[currentLang].project2Desc;
-            
-            if (p3Title) p3Title.textContent = translations[currentLang].project3Title;
-            if (p3Desc) p3Desc.textContent = translations[currentLang].project3Desc;
-            
-            // 3. تحديث مشروع Data Engineering
-            const deTitle = document.querySelector('.project-card:not(.featured) .project-type + h3');
-            const deDesc = document.querySelector('.project-card:not(.featured) .project-type + h3 + p');
-            const deMetric1 = document.querySelector('.project-metrics div:nth-child(1) span');
-            const deMetric2 = document.querySelector('.project-metrics div:nth-child(2) span');
-            const deMetric3 = document.querySelector('.project-metrics div:nth-child(3) span');
-            const deBtn = document.querySelector('.project-card .btn-primary');
-            
-            if (deTitle) deTitle.textContent = translations[currentLang].deTitle;
-            if (deDesc) deDesc.textContent = translations[currentLang].deDesc;
-            if (deMetric1) deMetric1.textContent = translations[currentLang].deMetric1;
-            if (deMetric2) deMetric2.textContent = translations[currentLang].deMetric2;
-            if (deMetric3) deMetric3.textContent = translations[currentLang].deMetric3;
-            if (deBtn) deBtn.innerHTML = `<i class="fa-brands fa-github"></i> ${translations[currentLang].deBtn}`;
-        });
-    }
+    if (!langToggle) return;
+
+    langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'en' ? 'ar' : 'en';
+        
+        document.documentElement.lang = currentLang;
+        document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+        
+        const langText = langToggle.querySelector('.lang-text');
+        if (langText) langText.textContent = currentLang === 'en' ? 'AR' : 'EN';
+
+        updateContent();
+    });
+}
+
+function updateContent() {
+    const t = translations[currentLang];
+    const setText = (id, text) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = text;
+    };
+    const setHTML = (id, html) => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = html;
+    };
+
+    setText('name', t.name);
+    setHTML('title', t.title);
+    setText('heroDesc', t.heroDesc);
+    setText('cvBtnText', t.cvBtnText);
+    setText('contactBtnText', t.contactBtnText);
+    setText('navAbout', t.navAbout);
+    setText('navSkills', t.navSkills);
+    setText('navExperience', t.navExperience);
+    setText('navProjects', t.navProjects);
+    setText('navContact', t.navContact);
+    setText('aboutTitle', t.aboutTitle);
+    setHTML('aboutDesc1', t.aboutDesc1);
+    setHTML('aboutDesc2', t.aboutDesc2);
+    setHTML('aboutDesc3', t.aboutDesc3);
+    setText('skillsTitle', t.skillsTitle);
+    setText('backendTitle', t.backendTitle);
+    setText('databaseTitle', t.databaseTitle);
+    setText('langTitle', t.langTitle);
+    setText('frontendTitle', t.frontendTitle);
+    setText('architectureTitle', t.architectureTitle);
+    setText('toolsTitle', t.toolsTitle);
+    setText('experienceTitle', t.experienceTitle);
+    setText('projectsTitle', t.projectsTitle);
+    setText('contactTitle', t.contactTitle);
+    setText('contactSubtitle', t.contactSubtitle);
+    setText('footerText', t.footerText);
 }
 
 // ========== Smooth Scroll ==========
 function initSmoothScroll() {
-    document.querySelectorAll('.nav-tag').forEach(link => {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
 }
 
-// ========== Gallery Filter ==========
-function initGalleryFilter() {
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const filter = btn.getAttribute('data-filter');
-            
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            galleryItems.forEach(item => {
-                if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                    item.style.display = 'block';
-                    item.style.animation = 'none';
-                    setTimeout(() => {
-                        item.style.animation = 'fadeIn 0.4s ease';
-                    }, 10);
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    });
-}
-
-// ========== Add CSS Animation ==========
-function addAnimations() {
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        
-        .fade-in { animation: fadeIn 0.6s ease forwards; }
-        
-        section { animation: fadeIn 0.8s ease forwards; }
-        
-        .skill-tag, .project-card, .oracle-item, .gallery-item {
-            animation: fadeIn 0.5s ease backwards;
-        }
-        
-        .skill-tag:nth-child(1) { animation-delay: 0.05s; }
-        .skill-tag:nth-child(2) { animation-delay: 0.1s; }
-        .skill-tag:nth-child(3) { animation-delay: 0.15s; }
-        .skill-tag:nth-child(4) { animation-delay: 0.2s; }
-        .skill-tag:nth-child(5) { animation-delay: 0.25s; }
-        .skill-tag:nth-child(6) { animation-delay: 0.3s; }
-        
-        .project-card:nth-child(1) { animation-delay: 0.1s; }
-        .project-card:nth-child(2) { animation-delay: 0.2s; }
-        .project-card:nth-child(3) { animation-delay: 0.3s; }
-        .project-card:nth-child(4) { animation-delay: 0.4s; }
-        .project-card:nth-child(5) { animation-delay: 0.5s; }
-        .project-card:nth-child(6) { animation-delay: 0.6s; }
-    `;
-    document.head.appendChild(style);
-}
-
-// ========== Scroll to Top Button ==========
-function addScrollToTop() {
+// ========== Scroll to Top ==========
+function initScrollToTop() {
     const btn = document.createElement('button');
     btn.innerHTML = '<i class="fas fa-arrow-up"></i>';
     btn.className = 'scroll-top-btn';
+    btn.setAttribute('aria-label', 'Scroll to top');
     document.body.appendChild(btn);
-    
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            btn.classList.add('visible');
-        } else {
-            btn.classList.remove('visible');
-        }
+        btn.classList.toggle('visible', window.scrollY > 400);
     });
-    
+
     btn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
-// ========== Skill Tags Click Effect ==========
-function initSkillClickEffect() {
-    document.querySelectorAll('.skill-tag').forEach(tag => {
-        tag.addEventListener('click', function() {
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 200);
-            console.log(`🎯 Skill clicked: ${this.textContent}`);
-        });
-    });
-}
-
-// ========== Intersection Observer for Scroll Animations ==========
+// ========== Scroll Animations ==========
 function initScrollAnimations() {
-    const elements = document.querySelectorAll('.skill-tag, .project-card, .oracle-item, .gallery-item');
-    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -321,60 +172,29 @@ function initScrollAnimations() {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: '50px' });
-    
-    elements.forEach(el => {
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.section, .skill-category, .project-card, .timeline-item, .contact-card').forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
-}
-
-// ========== Typing Effect for Title ==========
-function typeEffect(element, text, speed = 50) {
-    if (!element) return;
-    let i = 0;
-    element.textContent = "";
-    function typing() {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(typing, speed);
-        }
-    }
-    typing();
 }
 
 // ========== Initialize Everything ==========
 function init() {
     initTheme();
-    addAnimations();
     initLanguageToggle();
     initSmoothScroll();
-    initGalleryFilter();
-    initSkillClickEffect();
+    initScrollToTop();
     initScrollAnimations();
-    addScrollToTop();
-    
-    // Typing effect on title after delay
-    setTimeout(() => {
-        const titleElement = document.getElementById('title');
-        if (titleElement) {
-            typeEffect(titleElement, translations[currentLang].title, 60);
-        }
-    }, 300);
-    
-    // Theme toggle event
-    const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
-    }
-    
-    console.log('🚀 Yamen Portfolio Loaded Successfully!');
-    console.log('🎨 Dark/Light Mode Active');
-    console.log('✨ Animations Ready');
+    updateContent();
+
+    document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
+
+    console.log('%c🚀 Yamen Najem Portfolio', 'color: #6366f1; font-size: 20px; font-weight: bold;');
+    console.log('%c✨ Professional Edition Loaded', 'color: #06b6d4; font-size: 14px;');
 }
 
-// Start everything when DOM is ready
 document.addEventListener('DOMContentLoaded', init);

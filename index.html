@@ -1,175 +1,269 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>يامن - Full Stack Developer</title>
-    <meta name="description" content="يامن مطور Full Stack متخصص في Laravel و Java، خبرة في قواعد البيانات Oracle وأدوات Agile">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamen Najem | Odoo & Laravel Developer</title>
+    <meta name="description" content="Full Stack Developer specializing in Odoo ERP, Laravel, and Backend Development. Portfolio of Yamen Najem.">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- ملف CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- خلفية متحركة -->
+<body class="dark">
+    <!-- Animated Background -->
     <div class="animated-bg">
         <div class="gradient-circle"></div>
         <div class="gradient-circle"></div>
         <div class="gradient-circle"></div>
     </div>
 
-    <!-- زر تبديل اللغة -->
-    <div class="language-switch">
-        <button id="langToggle" class="lang-btn">
-            <span class="lang-icon">🇸🇦</span>
-            <span class="lang-text">English</span>
-            <span class="lang-icon">🇬🇧</span>
+    <!-- Top Controls -->
+    <div class="top-controls">
+        <button id="langToggle" class="control-btn" aria-label="Toggle Language">
+            <span class="lang-text">AR</span>
         </button>
-    </div>
-
-    <!-- زر تبديل الوضع (Dark/Light) -->
-    <div class="theme-switch">
-        <button id="themeToggle" class="theme-btn">
+        <button id="themeToggle" class="control-btn" aria-label="Toggle Theme">
             <i class="fas fa-moon"></i>
             <i class="fas fa-sun"></i>
         </button>
     </div>
 
     <div class="main-container">
-        <!-- Header -->
-        <header>
-            <div class="profile-wrapper">
-                <div class="profile-image">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h1 id="name">يامن</h1>
-                <p id="title" class="subtitle">Full Stack Developer | Software Engineer</p>
+        <!-- Header / Hero -->
+        <header class="hero">
+            <div class="hero-badge">
+                <span class="status-dot"></span>
+                Available for opportunities
             </div>
             
-            <div class="contact-info">
-                <a href="mailto:yamennajem709@gmail.com">
-                    <i class="fas fa-envelope"></i> 
-                    <span>yamennajem709@gmail.com</span>
-                </a>
-                <a href="https://github.com/yamenya11" target="_blank">
-                    <i class="fab fa-github"></i> 
-                    <span>GitHub</span>
-                </a>
-                <a href="tel:0932307869" class="phone-link">
-                    <i class="fas fa-phone"></i> 
-                    <span dir="ltr">0932307869</span>
-                </a>
+            <div class="profile-image">
+                <i class="fas fa-code"></i>
             </div>
             
-            <!-- زر تحميل CV -->
-            <div class="cv-download">
-                <a href="assets/images/cv%20yamen_imad_najem_developer26.pdf" download class="cv-btn">
+            <h1 id="name">Yamen Najem</h1>
+            <p id="title" class="subtitle">Odoo ERP Developer <span class="divider">|</span> Laravel Backend Developer</p>
+            
+            <p class="hero-description" id="heroDesc">
+                Information Technology Engineering graduate from Damascus University, specializing in Odoo ERP customization and Laravel backend development. I build scalable ERP solutions and modern web applications.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-actions">
+                <a href="assets/images/Yamen_Najem_CV.pdf" download class="btn btn-primary">
                     <i class="fas fa-download"></i> 
-                    <span>تحميل السيرة الذاتية (CV)</span>
+                    <span id="cvBtnText">Download CV</span>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-paper-plane"></i> 
+                    <span id="contactBtnText">Contact Me</span>
+                </a>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <a href="mailto:yamennajem709@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/yamenya11" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/yamen-najem-12b1211b3" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="tel:0932307869" title="Phone">
+                    <i class="fas fa-phone"></i>
                 </a>
             </div>
         </header>
 
-        <!-- وسوم التنقل -->
-        <div class="nav-tags">
-            <a href="#about" class="nav-tag"><i class="fas fa-user"></i> <span class="nav-text">من أنا</span></a>
-            <a href="#skills" class="nav-tag"><i class="fas fa-code"></i> <span class="nav-text">التقنيات</span></a>
-            <a href="#projects" class="nav-tag"><i class="fas fa-project-diagram"></i> <span class="nav-text">المشاريع</span></a>
-            <a href="#oracle" class="nav-tag"><i class="fas fa-database"></i> <span class="nav-text">Oracle</span></a>
-            <a href="#gallery" class="nav-tag"><i class="fas fa-images"></i> <span class="nav-text">المعرض</span></a>
-            <a href="#contact" class="nav-tag"><i class="fas fa-envelope"></i> <span class="nav-text">التواصل</span></a>
-        </div>
+        <!-- Navigation -->
+        <nav class="nav-tags">
+            <a href="#about" class="nav-tag"><i class="fas fa-user"></i> <span id="navAbout">About</span></a>
+            <a href="#skills" class="nav-tag"><i class="fas fa-code"></i> <span id="navSkills">Skills</span></a>
+            <a href="#experience" class="nav-tag"><i class="fas fa-briefcase"></i> <span id="navExperience">Experience</span></a>
+            <a href="#projects" class="nav-tag"><i class="fas fa-project-diagram"></i> <span id="navProjects">Projects</span></a>
+            <a href="#contact" class="nav-tag"><i class="fas fa-envelope"></i> <span id="navContact">Contact</span></a>
+        </nav>
 
-        <!-- قسم من أنا -->
-        <section id="about" class="about">
-            <h2 id="aboutTitle">من أنا</h2>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 id="aboutTitle">About Me</h2>
+            </div>
             <div class="about-content">
-                <p id="aboutDesc1" class="about-text">
-                    طالب في كلية الهندسة المعلوماتية - السنة الخامسة (برمجيات). 
-                    <strong>لدي خبرة سنة واحدة في تطوير تطبيقات الويب باستخدام Laravel</strong>، 
-                    وخلال هذه الفترة طورت عدة مشاريع عملية تطبق أنماط التصميم ومبادئ Clean Code.
+                <p class="about-text" id="aboutDesc1">
+                    I'm an <strong>Information Technology Engineering graduate</strong> from Damascus University (Class of 2026), with hands-on experience in <strong>Odoo ERP customization</strong> and <strong>Laravel backend development</strong>. 
                 </p>
-                <p id="aboutDesc2" class="about-text">
-                    <strong>ما يميزني هو قدرتي على التعلم بسرعة</strong> والتكيف مع التقنيات الجديدة. 
-                    أؤمن أن البرمجة رحلة تعلم مستمرة، وأنا دائم البحث والتطوير لأقدم أفضل الحلول البرمجية.
+                <p class="about-text" id="aboutDesc2">
+                    I specialize in building custom Odoo modules using Python ORM, XML/QWeb, REST API controllers, and cross-module business process design. I'm passionate about ERP systems, IoT integration, and delivering impactful business solutions.
                 </p>
-                
+                <p class="about-text" id="aboutDesc3">
+                    What sets me apart is my <strong>ability to learn quickly</strong> and adapt to new technologies. I believe programming is a continuous learning journey, and I'm always seeking improvement.
+                </p>
             </div>
         </section>
 
-        <!-- المهارات -->
-        <section id="skills" class="skills">
-            <h2 id="skillsTitle">التقنيات التي أعرفها</h2>
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 id="skillsTitle">Technical Skills</h2>
+            </div>
             
-            <div class="skills-category">
-                <h3><i class="fas fa-bolt"></i> <span id="backendTitle">Backend</span></h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">Laravel</span>
-                    <span class="skill-tag">PHP</span>
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">C#</span>
-                    <span class="skill-tag">REST API</span>
-                    <span class="skill-tag">Docker</span>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-server"></i></div>
+                    <h3 id="backendTitle">ERP & Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Odoo 19</span>
+                        <span class="skill-tag">Python ORM</span>
+                        <span class="skill-tag">XML/QWeb</span>
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">REST API</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <h3><i class="fas fa-database"></i> <span id="databaseTitle">قواعد البيانات</span></h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">SQLLite</span>
-                    <span class="skill-tag skill-new">Oracle</span>
-                    <span class="skill-tag">Redis</span>
-                    <span class="skill-tag">Eloquent ORM</span>
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h3 id="databaseTitle">Databases</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Oracle</span>
+                        <span class="skill-tag">SQLite</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">Eloquent ORM</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <h3><i class="fas fa-mobile-alt"></i> <span id="frontendTitle">Frontend</span></h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">Vue.js</span>
-                    <span class="skill-tag">Bootstrap</span>
-                    <span class="skill-tag">HTML/CSS</span>
-                    <span class="skill-tag">JavaScript</span>
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3 id="langTitle">Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <h3><i class="fas fa-cogs"></i> <span id="architectureTitle">هندسة البرمجيات</span></h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">Design Patterns</span>
-                    <span class="skill-tag">Clean Code</span>
-                    <span class="skill-tag">SOLID</span>
-                    <span class="skill-tag">OOP</span>
-                    <span class="skill-tag">MVC</span>
-                    <span class="skill-tag">Problem Solving</span>
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3 id="frontendTitle">Frontend & Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">LiveKit</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skills-category">
-                <h3><i class="fas fa-tools"></i> <span id="toolsTitle">الأدوات والتقنيات</span></h3>
-                <div class="skills-grid">
-                    <span class="skill-tag">Jira (Agile/Scrum)</span>
-                    <span class="skill-tag">Apidog</span>
-                    <span class="skill-tag">Postman</span>
-                    <span class="skill-tag">Git/GitHub</span>
-                    <span class="skill-tag">VS Code</span>
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+                    <h3 id="architectureTitle">Software Engineering</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Design Patterns</span>
+                        <span class="skill-tag">Clean Code</span>
+                        <span class="skill-tag">SOLID</span>
+                        <span class="skill-tag">OOP</span>
+                        <span class="skill-tag">MVC</span>
+                        <span class="skill-tag">Problem Solving</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                    <h3 id="toolsTitle">Tools & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Jira (Agile)</span>
+                        <span class="skill-tag">Apidog</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- المشاريع -->
-        <section id="projects" class="projects">
-            <h2 id="projectsTitle">مشاريعي</h2>
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 id="experienceTitle">Experience</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2026</div>
+                        <h3>Odoo ERP Developer <span class="timeline-tag">Graduation Project</span></h3>
+                        <p class="timeline-company">Smart Mobile Hospital ERP System</p>
+                        <ul class="timeline-list">
+                            <li>Designed and implemented a full ERP solution on Odoo 19 for a Smart Mobile Hospital network.</li>
+                            <li>Built a custom Odoo module (smart_hospital_pulse) using Python ORM and XML/QWeb.</li>
+                            <li>Developed REST API Controllers with @http.route for IoT heart-rate monitoring integration.</li>
+                            <li>Implemented RBAC security, fleet & biomedical asset management, and pharmaceutical supply chain.</li>
+                            <li>Executed 3-Way Matching (PO → Receipt → Vendor Bill) with Lot/Expiration tracking.</li>
+                            <li>Repurposed CRM as a Tele-Triage pipeline with automated Chatter alerts.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Present</div>
+                        <h3>Backend Developer <span class="timeline-tag">Online Training</span></h3>
+                        <p class="timeline-company">Mad Solution Online</p>
+                        <ul class="timeline-list">
+                            <li>Developing web applications using Laravel PHP with MVC architecture.</li>
+                            <li>Building and optimizing Controllers, Routing, Middleware, and Data Validation.</li>
+                            <li>Utilizing Eloquent ORM for database interactions and query optimization.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 id="projectsTitle">Featured Projects</h2>
+            </div>
+
             <div class="projects-grid">
-                
-                <!-- ⭐ مشروع التخرج - المنصة الطبية (يضاف أولاً) -->
+                <!-- Featured: Odoo -->
                 <div class="project-card featured">
-                    <h3>🏥 نظام إدارة العيادات المتقدم (ACMS)</h3>
-                    <p>منصة طبية شاملة تدمج جميع الخدمات الطبية (عيادات، صيدليات، إسعاف، استشارات فيديو، رعاية منزلية، مختبرات) في تطبيق واحد. تم تطويرها كـ مشروع تخرج.</p>
+                    <div class="project-badge">⭐ Featured</div>
+                    <div class="project-icon">🏥</div>
+                    <h3>Smart Mobile Hospital ERP System</h3>
+                    <p class="project-subtitle">Odoo 19 · Custom Module Development</p>
+                    <p>Designed and implemented a full ERP solution for a Smart Mobile Hospital network. Includes custom Python module development, IoT heart-rate integration via REST API, Fleet/Inventory/Purchase/Maintenance/CRM/PoS modules.</p>
+                    <div class="project-tech">
+                        <span>Odoo 19</span>
+                        <span>Python</span>
+                        <span>XML/QWeb</span>
+                        <span>REST API</span>
+                        <span>PostgreSQL</span>
+                        <span>Docker</span>
+                    </div>
+                </div>
+
+                <!-- ACMS -->
+                <div class="project-card">
+                    <div class="project-icon">🏥</div>
+                    <h3>Advanced Clinic Management System</h3>
+                    <p class="project-subtitle">ACMS · Graduation Project</p>
+                    <p>Comprehensive medical platform integrating clinics, pharmacies, ambulance, video consultations, home care, and labs into one application.</p>
                     <div class="project-tech">
                         <span>Laravel 12</span>
                         <span>Flutter</span>
@@ -180,164 +274,151 @@
                     </div>
                 </div>
 
+                <!-- Banking -->
                 <div class="project-card">
-                    <h3>🏦 Banking System</h3>
-                    <p>نظام بنكي بأنماط التصميم مع Redis و Pagination.</p>
+                    <div class="project-icon">🏦</div>
+                    <h3>Banking System</h3>
+                    <p class="project-subtitle">Design Patterns · Redis</p>
+                    <p>Complete banking system applying Design Patterns (Factory, Observer, State, Repository). Enhanced with Redis caching and pagination.</p>
                     <div class="project-tech">
-                        <span>Laravel</span><span>MySQL</span><span>Redis</span>
+                        <span>Laravel</span>
+                        <span>MySQL</span>
+                        <span>Redis</span>
                     </div>
-                    <a href="https://github.com/yamenya11/BankingSystem-" target="_blank" class="github-link-small">GitHub <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://github.com/yamenya11/BankingSystem-" target="_blank" class="project-link">
+                        View on GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
 
+                <!-- Government Complaints -->
                 <div class="project-card">
-                    <h3>⚖️ Government Complaints</h3>
-                    <p>نظام شكاوى حكومي مع Clean Code, OTP, Caching.</p>
+                    <div class="project-icon">⚖️</div>
+                    <h3>Government Complaints System</h3>
+                    <p class="project-subtitle">Clean Code · SOLID · Security</p>
+                    <p>Complaint management system with Clean Code, SOLID principles, OTP security, caching, eager loading, and audit trail.</p>
                     <div class="project-tech">
-                        <span>Laravel</span><span>MySQL</span><span>Redis</span>
+                        <span>Laravel</span>
+                        <span>MySQL</span>
+                        <span>Redis</span>
                     </div>
-                    <a href="https://github.com/Government-complaints-system/Government-complaints-system-laravel" target="_blank" class="github-link-small">GitHub <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://github.com/Government-complaints-system" target="_blank" class="project-link">
+                        View on GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
 
+                <!-- Data Engineering -->
                 <div class="project-card">
-                    <h3>🧩 Crypto Puzzle</h3>
-                    <p>لعبة جافا بمصفوفة 2D لدمج الأرقام وتوليد هدايا.</p>
+                    <div class="project-icon">📊</div>
+                    <h3>Data Engineering Pipeline</h3>
+                    <p class="project-subtitle">Python · ETL · Advanced SQL</p>
+                    <p>End-to-end data pipeline for restaurant data analysis using Python OOP, Pandas, SQLite, and advanced SQL (Window Functions, CTEs).</p>
                     <div class="project-tech">
-                        <span>Java</span><span>2D Arrays</span><span>Swing</span>
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>SQLite</span>
+                        <span>ETL</span>
                     </div>
-                    <a href="https://github.com/yamenya11/Crypto-Puzzle" target="_blank" class="github-link-small">GitHub <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://github.com/yamenya11/data-engineering-pipeline" target="_blank" class="project-link">
+                        View on GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
 
+                <!-- Compiler -->
                 <div class="project-card">
-                    <h3>🔢 Secret Number Game</h3>
-                    <p>لعبة تخمين الرقم السري مع نظام حماية للدمن.</p>
+                    <div class="project-icon">🔧</div>
+                    <h3>Commang – Compiler</h3>
+                    <p class="project-subtitle">Java · ANTLR · Compiler Design</p>
+                    <p>Compiler built with ANTLR for language parsing and AST construction.</p>
                     <div class="project-tech">
-                        <span>Java</span><span>Algorithms</span><span>Security</span>
+                        <span>Java</span>
+                        <span>ANTLR</span>
+                        <span>Compiler Design</span>
                     </div>
-                    <a href="https://github.com/yamenya11/algorithmSecretNumberGame-" target="_blank" class="github-link-small">GitHub <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://github.com/yamenya11/comang" target="_blank" class="project-link">
+                        View on GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
 
+                <!-- Animal Association -->
                 <div class="project-card">
-                    <h3>🐾 جمعية حيون</h3>
-                    <p>نظام Laravel لإدارة جمعية رعاية الحيوانات.</p>
+                    <div class="project-icon">🐾</div>
+                    <h3>Animal Association Management</h3>
+                    <p class="project-subtitle">Laravel · MySQL · Bootstrap</p>
+                    <p>Comprehensive platform for an animal shelter, managing adoptions, donations, departments, and user roles.</p>
                     <div class="project-tech">
-                        <span>Laravel</span><span>MySQL</span><span>Bootstrap</span>
+                        <span>Laravel</span>
+                        <span>MySQL</span>
+                        <span>Bootstrap</span>
                     </div>
-                    <a href="https://github.com/yamenya11/Animal-Association" target="_blank" class="github-link-small">GitHub <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://github.com/yamenya11/Animal-Association" target="_blank" class="project-link">
+                        View on GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
 
+                <!-- Java Games -->
                 <div class="project-card">
-                    <h3>🔧 Commang – Compiler</h3>
-                    <p>مترجم (Compiler) باستخدام ANTLR لتحليل اللغات وبناء AST.</p>
+                    <div class="project-icon">🧩</div>
+                    <h3>Crypto Puzzle & Secret Number Game</h3>
+                    <p class="project-subtitle">Java · 2D Arrays · Swing</p>
+                    <p>Java-based puzzle games using 2D arrays, algorithms, and security features.</p>
                     <div class="project-tech">
-                        <span>Java</span><span>ANTLR</span><span>Compiler Design</span>
+                        <span>Java</span>
+                        <span>2D Arrays</span>
+                        <span>Swing</span>
                     </div>
-                    <a href="https://github.com/yamenya11/comang" target="_blank" class="github-link-small">GitHub <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://github.com/yamenya11" target="_blank" class="project-link">
+                        View on GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-<!-- إضافة مشروع Data Engineering -->
-<div class="project-card">
-    <span class="project-type">Data Engineering / Python</span>
-    <h3>SQL Advanced & Data Engineering Pipeline</h3>
-    <p>مشروع متكامل لبناء خط أنابيب بيانات (Data Pipeline) يهدف إلى تحليل بيانات المطاعم. 
-    يتضمن بناء نظام OOP (Object Oriented Programming) باستخدام Python، وقراءة البيانات ومعالجتها باستخدام Pandas، 
-    وتخزينها وتحليلها باستخدام SQLite مع تطبيق استعلامات SQL متقدمة (Window Functions, CTEs).</p>
-    
-    <div class="tech-tags">
-        <span>Python</span><span>Pandas</span><span>SQLite</span><span>SQL (Advanced)</span><span>OOP</span><span>ETL</span>
-    </div>
-    
-    <div class="project-metrics">
-        <div><strong>244+</strong><span>معاملة</span></div>
-        <div><strong>3+</strong><span>مراحل ETL</span></div>
-        <div><strong>100%</strong><span>تحليل بيانات</span></div>
-    </div>
-
-    <a href="https://github.com/yamenya11/data-engineering-pipeline.git" target="_blank" class="btn-primary">
-        <i class="fa-brands fa-github"></i> عرض المشروع على GitHub
-    </a>
-</div>
             </div>
         </section>
 
-        <!-- Oracle Expertise -->
-        <section id="oracle" class="oracle-section">
-            <h2><i class="fas fa-database"></i> <span id="oracleTitle">Oracle Database Expertise</span></h2>
-            <p id="oracleDesc">خبرة عملية في مشاريع Data Engineering باستخدام Oracle Database:</p>
-            <div class="oracle-grid">
-                <div class="oracle-item">👥 Users / Roles / Permissions (GRANT)</div>
-                <div class="oracle-item">📦 Tablespaces Management</div>
-                <div class="oracle-item">⚡ Triggers & Stored Procedures</div>
-                <div class="oracle-item">📊 Materialized Views Optimization</div>
-                <div class="oracle-item">🔒 Audit Logs & Security Layer</div>
-                <div class="oracle-item">📈 Partitioning (Performance Scaling)</div>
-                <div class="oracle-item">🏗️ Star Schema Data Warehouse</div>
-                <div class="oracle-item">📅 Time Dimension Modeling</div>
-                <div class="oracle-item">🔍 Query Optimization (Indexing)</div>
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 id="contactTitle">Get In Touch</h2>
             </div>
-        </section>
-
-        <!-- معرض الصور -->
-        <section id="gallery" class="gallery-section">
-            <h2 id="galleryTitle">📸 معرض الأعمال</h2>
-            <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">الكل</button>
-                <button class="filter-btn" data-filter="admin">لوحة الإدارة</button>
-                <button class="filter-btn" data-filter="auth">المصادقة</button>
-                <button class="filter-btn" data-filter="client">واجهة العميل</button>
-            </div>
-            <div class="gallery-grid" id="galleryGrid">
-                <div class="gallery-item" data-category="admin">
-                    <img src="assets/images/admin/dashboard.png" alt="Dashboard" loading="lazy" onerror="this.src='https://placehold.co/400x250/667eea/white?text=Dashboard'">
-                    <div class="gallery-caption">لوحة تحكم المدير</div>
-                </div>
-                <div class="gallery-item" data-category="admin">
-                    <img src="assets/images/admin/manageaccount.png" alt="Manage Accounts" loading="lazy" onerror="this.src='https://placehold.co/400x250/764ba2/white?text=Manage+Accounts'">
-                    <div class="gallery-caption">إدارة الحسابات</div>
-                </div>
-                <div class="gallery-item" data-category="auth">
-                    <img src="assets/images/auth/login.png" alt="Login Page" loading="lazy" onerror="this.src='https://placehold.co/400x250/667eea/white?text=Login'">
-                    <div class="gallery-caption">صفحة تسجيل الدخول</div>
-                </div>
-                <div class="gallery-item" data-category="auth">
-                    <img src="assets/images/auth/register.png" alt="Register Page" loading="lazy" onerror="this.src='https://placehold.co/400x250/764ba2/white?text=Register'">
-                    <div class="gallery-caption">صفحة التسجيل</div>
-                </div>
-                <div class="gallery-item" data-category="auth">
-                    <img src="assets/images/auth/welcome.png" alt="Welcome Page" loading="lazy" onerror="this.src='https://placehold.co/400x250/667eea/white?text=Welcome'">
-                    <div class="gallery-caption">صفحة الترحيب</div>
-                </div>
-                <div class="gallery-item" data-category="client">
-                    <img src="assets/images/client/account.png" alt="Account" loading="lazy" onerror="this.src='https://placehold.co/400x250/764ba2/white?text=Account'">
-                    <div class="gallery-caption">معلومات الحساب</div>
-                </div>
-                <div class="gallery-item" data-category="client">
-                    <img src="assets/images/client/createaccount.png" alt="Create Account" loading="lazy" onerror="this.src='https://placehold.co/400x250/667eea/white?text=Create+Account'">
-                    <div class="gallery-caption">إنشاء حساب جديد</div>
-                </div>
-                <div class="gallery-item" data-category="client">
-                    <img src="assets/images/client/home.png" alt="Home Page" loading="lazy" onerror="this.src='https://placehold.co/400x250/764ba2/white?text=Home'">
-                    <div class="gallery-caption">الصفحة الرئيسية</div>
-                </div>
-                <div class="gallery-item" data-category="client">
-                    <img src="assets/images/client/transaction.png" alt="Transactions" loading="lazy" onerror="this.src='https://placehold.co/400x250/667eea/white?text=Transactions'">
-                    <div class="gallery-caption">المعاملات المالية</div>
-                </div>
+            <p class="contact-subtitle" id="contactSubtitle">Let's build something amazing together</p>
+            
+            <div class="contact-grid">
+                <a href="mailto:yamennajem709@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                    <small>yamennajem709@gmail.com</small>
+                </a>
+                <a href="https://github.com/yamenya11" target="_blank" class="contact-card">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                    <small>@yamenya11</small>
+                </a>
+                <a href="https://www.linkedin.com/in/yamen-najem-12b1211b3" target="_blank" class="contact-card">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                    <small>Yamen Najem</small>
+                </a>
+                <a href="tel:0932307869" class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <span>Phone</span>
+                    <small>+963 932 307 869</small>
+                </a>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer id="contact">
+        <footer>
             <div class="footer-content">
-                <p id="footerText">© 2026 يامن - Full Stack Developer</p>
+                <p id="footerText">© 2026 Yamen Najem. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="mailto:yamennajem709@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <a href="https://github.com/yamenya11" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="tel:0932307869"><i class="fas fa-phone"></i></a>
+                    <a href="mailto:yamennajem709@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/yamenya11" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/yamen-najem-12b1211b3" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="tel:0932307869" title="Phone"><i class="fas fa-phone"></i></a>
                 </div>
             </div>
         </footer>
     </div>
 
-    <!-- ملف JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
